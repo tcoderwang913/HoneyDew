@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Song Wang. All rights reserved.
 //
 
+//FB login code from :http://www.appcoda.com/ios-programming-facebook-login-sdk/
+
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "HomeScreenViewController.h"
