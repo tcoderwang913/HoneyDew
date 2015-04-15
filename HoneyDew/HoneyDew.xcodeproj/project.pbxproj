@@ -10,17 +10,13 @@
 		575BD65F1ADE3B16001A8695 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD65E1ADE3B16001A8695 /* main.m */; };
 		575BD6621ADE3B16001A8695 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD6611ADE3B16001A8695 /* AppDelegate.m */; };
 		575BD6651ADE3B16001A8695 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD6641ADE3B16001A8695 /* ViewController.m */; };
-		575BD6681ADE3B16001A8695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575BD6661ADE3B16001A8695 /* Main.storyboard */; };
 		575BD66A1ADE3B16001A8695 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 575BD6691ADE3B16001A8695 /* Images.xcassets */; };
-		575BD66D1ADE3B16001A8695 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 575BD66B1ADE3B16001A8695 /* LaunchScreen.xib */; };
 		575BD6791ADE3B16001A8695 /* HoneyDewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD6781ADE3B16001A8695 /* HoneyDewTests.m */; };
-		575BD6881ADE3B9B001A8695 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6841ADE3B9B001A8695 /* Bolts.framework */; };
-		575BD6891ADE3B9C001A8695 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6851ADE3B9B001A8695 /* FBSDKCoreKit.framework */; };
-		575BD68A1ADE3B9C001A8695 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6861ADE3B9B001A8695 /* FBSDKLoginKit.framework */; };
-		575BD68B1ADE3B9C001A8695 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6871ADE3B9B001A8695 /* FBSDKShareKit.framework */; };
 		575BD6921ADE4145001A8695 /* HomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD68D1ADE4145001A8695 /* HomeScreenViewController.m */; };
 		575BD6931ADE4145001A8695 /* InvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD68F1ADE4145001A8695 /* InvitationViewController.m */; };
 		575BD6941ADE4145001A8695 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD6911ADE4145001A8695 /* SettingsViewController.m */; };
+		575BD6961ADE496E001A8695 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6951ADE496E001A8695 /* FacebookSDK.framework */; };
+		575BD6981ADE4A5A001A8695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575BD6971ADE4A5A001A8695 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,22 +37,18 @@
 		575BD6611ADE3B16001A8695 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		575BD6631ADE3B16001A8695 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		575BD6641ADE3B16001A8695 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		575BD6671ADE3B16001A8695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		575BD6691ADE3B16001A8695 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		575BD66C1ADE3B16001A8695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		575BD6721ADE3B16001A8695 /* HoneyDewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoneyDewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575BD6771ADE3B16001A8695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		575BD6781ADE3B16001A8695 /* HoneyDewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoneyDewTests.m; sourceTree = "<group>"; };
-		575BD6841ADE3B9B001A8695 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
-		575BD6851ADE3B9B001A8695 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		575BD6861ADE3B9B001A8695 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		575BD6871ADE3B9B001A8695 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		575BD68C1ADE4145001A8695 /* HomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
 		575BD68D1ADE4145001A8695 /* HomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
 		575BD68E1ADE4145001A8695 /* InvitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationViewController.h; sourceTree = "<group>"; };
 		575BD68F1ADE4145001A8695 /* InvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationViewController.m; sourceTree = "<group>"; };
 		575BD6901ADE4145001A8695 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		575BD6911ADE4145001A8695 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		575BD6951ADE496E001A8695 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		575BD6971ADE4A5A001A8695 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				575BD68B1ADE3B9C001A8695 /* FBSDKShareKit.framework in Frameworks */,
-				575BD6881ADE3B9B001A8695 /* Bolts.framework in Frameworks */,
-				575BD6891ADE3B9C001A8695 /* FBSDKCoreKit.framework in Frameworks */,
-				575BD68A1ADE3B9C001A8695 /* FBSDKLoginKit.framework in Frameworks */,
+				575BD6961ADE496E001A8695 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,9 +101,8 @@
 				575BD6611ADE3B16001A8695 /* AppDelegate.m */,
 				575BD6631ADE3B16001A8695 /* ViewController.h */,
 				575BD6641ADE3B16001A8695 /* ViewController.m */,
-				575BD6661ADE3B16001A8695 /* Main.storyboard */,
+				575BD6971ADE4A5A001A8695 /* Main.storyboard */,
 				575BD6691ADE3B16001A8695 /* Images.xcassets */,
-				575BD66B1ADE3B16001A8695 /* LaunchScreen.xib */,
 				575BD6831ADE3B77001A8695 /* Frameworks */,
 				575BD65C1ADE3B16001A8695 /* Supporting Files */,
 			);
@@ -150,10 +138,7 @@
 		575BD6831ADE3B77001A8695 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				575BD6841ADE3B9B001A8695 /* Bolts.framework */,
-				575BD6851ADE3B9B001A8695 /* FBSDKCoreKit.framework */,
-				575BD6861ADE3B9B001A8695 /* FBSDKLoginKit.framework */,
-				575BD6871ADE3B9B001A8695 /* FBSDKShareKit.framework */,
+				575BD6951ADE496E001A8695 /* FacebookSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,9 +223,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				575BD6681ADE3B16001A8695 /* Main.storyboard in Resources */,
-				575BD66D1ADE3B16001A8695 /* LaunchScreen.xib in Resources */,
 				575BD66A1ADE3B16001A8695 /* Images.xcassets in Resources */,
+				575BD6981ADE4A5A001A8695 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,25 +268,6 @@
 			targetProxy = 575BD6731ADE3B16001A8695 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		575BD6661ADE3B16001A8695 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				575BD6671ADE3B16001A8695 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		575BD66B1ADE3B16001A8695 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				575BD66C1ADE3B16001A8695 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		575BD67A1ADE3B16001A8695 /* Debug */ = {
@@ -393,6 +358,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/sowang/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/HoneyDew",
 				);
 				INFOPLIST_FILE = HoneyDew/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -408,6 +374,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/sowang/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/HoneyDew",
 				);
 				INFOPLIST_FILE = HoneyDew/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
