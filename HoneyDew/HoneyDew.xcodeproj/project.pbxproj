@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		575BD65F1ADE3B16001A8695 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD65E1ADE3B16001A8695 /* main.m */; };
+		575BD6621ADE3B16001A8695 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD6611ADE3B16001A8695 /* AppDelegate.m */; };
+		575BD6651ADE3B16001A8695 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD6641ADE3B16001A8695 /* ViewController.m */; };
+		575BD6681ADE3B16001A8695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575BD6661ADE3B16001A8695 /* Main.storyboard */; };
+		575BD66A1ADE3B16001A8695 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 575BD6691ADE3B16001A8695 /* Images.xcassets */; };
+		575BD66D1ADE3B16001A8695 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 575BD66B1ADE3B16001A8695 /* LaunchScreen.xib */; };
+		575BD6791ADE3B16001A8695 /* HoneyDewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD6781ADE3B16001A8695 /* HoneyDewTests.m */; };
+		575BD6881ADE3B9B001A8695 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6841ADE3B9B001A8695 /* Bolts.framework */; };
+		575BD6891ADE3B9C001A8695 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6851ADE3B9B001A8695 /* FBSDKCoreKit.framework */; };
+		575BD68A1ADE3B9C001A8695 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6861ADE3B9B001A8695 /* FBSDKLoginKit.framework */; };
+		575BD68B1ADE3B9C001A8695 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6871ADE3B9B001A8695 /* FBSDKShareKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		575BD6731ADE3B16001A8695 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 575BD6511ADE3B16001A8695 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 575BD6581ADE3B16001A8695;
+			remoteInfo = HoneyDew;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		575BD6591ADE3B16001A8695 /* HoneyDew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoneyDew.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		575BD65D1ADE3B16001A8695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		575BD65E1ADE3B16001A8695 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		575BD6601ADE3B16001A8695 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		575BD6611ADE3B16001A8695 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		575BD6631ADE3B16001A8695 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		575BD6641ADE3B16001A8695 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		575BD6671ADE3B16001A8695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		575BD6691ADE3B16001A8695 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		575BD66C1ADE3B16001A8695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		575BD6721ADE3B16001A8695 /* HoneyDewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoneyDewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		575BD6771ADE3B16001A8695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		575BD6781ADE3B16001A8695 /* HoneyDewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoneyDewTests.m; sourceTree = "<group>"; };
+		575BD6841ADE3B9B001A8695 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		575BD6851ADE3B9B001A8695 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		575BD6861ADE3B9B001A8695 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		575BD6871ADE3B9B001A8695 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		575BD6561ADE3B16001A8695 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575BD68B1ADE3B9C001A8695 /* FBSDKShareKit.framework in Frameworks */,
+				575BD6881ADE3B9B001A8695 /* Bolts.framework in Frameworks */,
+				575BD6891ADE3B9C001A8695 /* FBSDKCoreKit.framework in Frameworks */,
+				575BD68A1ADE3B9C001A8695 /* FBSDKLoginKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		575BD66F1ADE3B16001A8695 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		575BD6501ADE3B16001A8695 = {
+			isa = PBXGroup;
+			children = (
+				575BD65B1ADE3B16001A8695 /* HoneyDew */,
+				575BD6751ADE3B16001A8695 /* HoneyDewTests */,
+				575BD65A1ADE3B16001A8695 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		575BD65A1ADE3B16001A8695 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				575BD6591ADE3B16001A8695 /* HoneyDew.app */,
+				575BD6721ADE3B16001A8695 /* HoneyDewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		575BD65B1ADE3B16001A8695 /* HoneyDew */ = {
+			isa = PBXGroup;
+			children = (
+				575BD6601ADE3B16001A8695 /* AppDelegate.h */,
+				575BD6611ADE3B16001A8695 /* AppDelegate.m */,
+				575BD6631ADE3B16001A8695 /* ViewController.h */,
+				575BD6641ADE3B16001A8695 /* ViewController.m */,
+				575BD6661ADE3B16001A8695 /* Main.storyboard */,
+				575BD6691ADE3B16001A8695 /* Images.xcassets */,
+				575BD66B1ADE3B16001A8695 /* LaunchScreen.xib */,
+				575BD6831ADE3B77001A8695 /* Frameworks */,
+				575BD65C1ADE3B16001A8695 /* Supporting Files */,
+			);
+			path = HoneyDew;
+			sourceTree = "<group>";
+		};
+		575BD65C1ADE3B16001A8695 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				575BD65D1ADE3B16001A8695 /* Info.plist */,
+				575BD65E1ADE3B16001A8695 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		575BD6751ADE3B16001A8695 /* HoneyDewTests */ = {
+			isa = PBXGroup;
+			children = (
+				575BD6781ADE3B16001A8695 /* HoneyDewTests.m */,
+				575BD6761ADE3B16001A8695 /* Supporting Files */,
+			);
+			path = HoneyDewTests;
+			sourceTree = "<group>";
+		};
+		575BD6761ADE3B16001A8695 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				575BD6771ADE3B16001A8695 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		575BD6831ADE3B77001A8695 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				575BD6841ADE3B9B001A8695 /* Bolts.framework */,
+				575BD6851ADE3B9B001A8695 /* FBSDKCoreKit.framework */,
+				575BD6861ADE3B9B001A8695 /* FBSDKLoginKit.framework */,
+				575BD6871ADE3B9B001A8695 /* FBSDKShareKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		575BD6581ADE3B16001A8695 /* HoneyDew */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 575BD67C1ADE3B16001A8695 /* Build configuration list for PBXNativeTarget "HoneyDew" */;
+			buildPhases = (
+				575BD6551ADE3B16001A8695 /* Sources */,
+				575BD6561ADE3B16001A8695 /* Frameworks */,
+				575BD6571ADE3B16001A8695 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HoneyDew;
+			productName = HoneyDew;
+			productReference = 575BD6591ADE3B16001A8695 /* HoneyDew.app */;
+			productType = "com.apple.product-type.application";
+		};
+		575BD6711ADE3B16001A8695 /* HoneyDewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 575BD67F1ADE3B16001A8695 /* Build configuration list for PBXNativeTarget "HoneyDewTests" */;
+			buildPhases = (
+				575BD66E1ADE3B16001A8695 /* Sources */,
+				575BD66F1ADE3B16001A8695 /* Frameworks */,
+				575BD6701ADE3B16001A8695 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				575BD6741ADE3B16001A8695 /* PBXTargetDependency */,
+			);
+			name = HoneyDewTests;
+			productName = HoneyDewTests;
+			productReference = 575BD6721ADE3B16001A8695 /* HoneyDewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		575BD6511ADE3B16001A8695 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Song Wang";
+				TargetAttributes = {
+					575BD6581ADE3B16001A8695 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					575BD6711ADE3B16001A8695 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 575BD6581ADE3B16001A8695;
+					};
+				};
+			};
+			buildConfigurationList = 575BD6541ADE3B16001A8695 /* Build configuration list for PBXProject "HoneyDew" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 575BD6501ADE3B16001A8695;
+			productRefGroup = 575BD65A1ADE3B16001A8695 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				575BD6581ADE3B16001A8695 /* HoneyDew */,
+				575BD6711ADE3B16001A8695 /* HoneyDewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		575BD6571ADE3B16001A8695 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575BD6681ADE3B16001A8695 /* Main.storyboard in Resources */,
+				575BD66D1ADE3B16001A8695 /* LaunchScreen.xib in Resources */,
+				575BD66A1ADE3B16001A8695 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		575BD6701ADE3B16001A8695 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		575BD6551ADE3B16001A8695 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575BD6651ADE3B16001A8695 /* ViewController.m in Sources */,
+				575BD6621ADE3B16001A8695 /* AppDelegate.m in Sources */,
+				575BD65F1ADE3B16001A8695 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		575BD66E1ADE3B16001A8695 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575BD6791ADE3B16001A8695 /* HoneyDewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		575BD6741ADE3B16001A8695 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 575BD6581ADE3B16001A8695 /* HoneyDew */;
+			targetProxy = 575BD6731ADE3B16001A8695 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		575BD6661ADE3B16001A8695 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				575BD6671ADE3B16001A8695 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		575BD66B1ADE3B16001A8695 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				575BD66C1ADE3B16001A8695 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		575BD67A1ADE3B16001A8695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		575BD67B1ADE3B16001A8695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		575BD67D1ADE3B16001A8695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sowang/Documents/FacebookSDK,
+				);
+				INFOPLIST_FILE = HoneyDew/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		575BD67E1ADE3B16001A8695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sowang/Documents/FacebookSDK,
+				);
+				INFOPLIST_FILE = HoneyDew/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		575BD6801ADE3B16001A8695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HoneyDewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HoneyDew.app/HoneyDew";
+			};
+			name = Debug;
+		};
+		575BD6811ADE3B16001A8695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HoneyDewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HoneyDew.app/HoneyDew";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		575BD6541ADE3B16001A8695 /* Build configuration list for PBXProject "HoneyDew" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				575BD67A1ADE3B16001A8695 /* Debug */,
+				575BD67B1ADE3B16001A8695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		575BD67C1ADE3B16001A8695 /* Build configuration list for PBXNativeTarget "HoneyDew" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				575BD67D1ADE3B16001A8695 /* Debug */,
+				575BD67E1ADE3B16001A8695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		575BD67F1ADE3B16001A8695 /* Build configuration list for PBXNativeTarget "HoneyDewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				575BD6801ADE3B16001A8695 /* Debug */,
+				575BD6811ADE3B16001A8695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 575BD6511ADE3B16001A8695 /* Project object */;
+}
