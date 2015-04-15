@@ -18,6 +18,9 @@
 		575BD6891ADE3B9C001A8695 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6851ADE3B9B001A8695 /* FBSDKCoreKit.framework */; };
 		575BD68A1ADE3B9C001A8695 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6861ADE3B9B001A8695 /* FBSDKLoginKit.framework */; };
 		575BD68B1ADE3B9C001A8695 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6871ADE3B9B001A8695 /* FBSDKShareKit.framework */; };
+		575BD6921ADE4145001A8695 /* HomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD68D1ADE4145001A8695 /* HomeScreenViewController.m */; };
+		575BD6931ADE4145001A8695 /* InvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD68F1ADE4145001A8695 /* InvitationViewController.m */; };
+		575BD6941ADE4145001A8695 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD6911ADE4145001A8695 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,12 @@
 		575BD6851ADE3B9B001A8695 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		575BD6861ADE3B9B001A8695 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		575BD6871ADE3B9B001A8695 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		575BD68C1ADE4145001A8695 /* HomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
+		575BD68D1ADE4145001A8695 /* HomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
+		575BD68E1ADE4145001A8695 /* InvitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationViewController.h; sourceTree = "<group>"; };
+		575BD68F1ADE4145001A8695 /* InvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationViewController.m; sourceTree = "<group>"; };
+		575BD6901ADE4145001A8695 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		575BD6911ADE4145001A8695 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +102,12 @@
 		575BD65B1ADE3B16001A8695 /* HoneyDew */ = {
 			isa = PBXGroup;
 			children = (
+				575BD68C1ADE4145001A8695 /* HomeScreenViewController.h */,
+				575BD68D1ADE4145001A8695 /* HomeScreenViewController.m */,
+				575BD68E1ADE4145001A8695 /* InvitationViewController.h */,
+				575BD68F1ADE4145001A8695 /* InvitationViewController.m */,
+				575BD6901ADE4145001A8695 /* SettingsViewController.h */,
+				575BD6911ADE4145001A8695 /* SettingsViewController.m */,
 				575BD6601ADE3B16001A8695 /* AppDelegate.h */,
 				575BD6611ADE3B16001A8695 /* AppDelegate.m */,
 				575BD6631ADE3B16001A8695 /* ViewController.h */,
@@ -244,7 +259,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				575BD6651ADE3B16001A8695 /* ViewController.m in Sources */,
+				575BD6921ADE4145001A8695 /* HomeScreenViewController.m in Sources */,
 				575BD6621ADE3B16001A8695 /* AppDelegate.m in Sources */,
+				575BD6941ADE4145001A8695 /* SettingsViewController.m in Sources */,
+				575BD6931ADE4145001A8695 /* InvitationViewController.m in Sources */,
 				575BD65F1ADE3B16001A8695 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

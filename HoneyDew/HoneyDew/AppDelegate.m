@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "HomeScreenViewController.h"
+#import "InvitationViewController.h"
+#import "SettingsViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
@@ -20,9 +24,36 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds] ];
+  
+  ViewController *vc = [[ViewController alloc ] initWithNibName:nil bundle:nil];
+  self.window.rootViewController = vc;
+  
+  [FBSDKProfilePictureView class];
+  
   return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                  didFinishLaunchingWithOptions:launchOptions];
-  return YES;
+                           didFinishLaunchingWithOptions:launchOptions];
+  
+//    self.tabBarController = [[UITabBarController alloc]  init];
+//  
+//    HomeScreenViewController *homeScreenVC = [[HomeScreenViewController alloc] init];
+//    InvitationViewController *invitationVC = [[InvitationViewController alloc]  init];
+//    SettingsViewController *settingVC = [[SettingsViewController alloc] init];
+//  
+//    [[UITabBarItem appearance] setTitleTextAttributes:@{
+//                                                        NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:20.0f],
+//                                                        NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:48/255.0 blue:92/255.0 alpha:1.0],}
+//                                             forState:UIControlStateNormal];
+//  
+//    [[UITabBarItem appearance] setTitleTextAttributes:@{
+//                                                        NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:20.0f],
+//                                                        NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:138/255.0 blue:196/255.0 alpha:1.0],}
+//                                             forState:UIControlStateSelected];
+//  
+//    self.tabBarController.viewControllers = @[homeScreenVC, invitationVC,settingVC];
+//    self.window.rootViewController = self.tabBarController;
+//  return YES;
+  
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

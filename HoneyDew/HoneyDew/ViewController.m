@@ -19,10 +19,12 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
+  self.view.backgroundColor = [UIColor whiteColor];
   
   FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
   loginButton.center = self.view.center;
   [self.view addSubview:loginButton];
+  
   
 }
 
