@@ -21,6 +21,7 @@
     UITableView  *settingView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     settingView.backgroundColor = [UIColor whiteColor];
     self.title = @"Settings";
+    self.tabBarItem.image = [UIImage imageNamed:@"Settings-26"];
     self.view = settingView;
   }
   

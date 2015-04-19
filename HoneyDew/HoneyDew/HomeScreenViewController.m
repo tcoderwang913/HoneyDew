@@ -7,7 +7,7 @@
 //
 
 #import "HomeScreenViewController.h"
-
+#import "RestauranteCollectionViewController.h"
 @interface HomeScreenViewController ()
 
 @end
@@ -21,7 +21,12 @@
     UIView *homeScreenView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     homeScreenView.backgroundColor = [UIColor whiteColor];
     self.title = @"Home";
+    self.tabBarItem.image = [UIImage imageNamed:@"Home-25"];
     self.view = homeScreenView;
+    
+    RestauranteCollectionViewController *restauranteVC = [[RestauranteCollectionViewController alloc] initWithNibName:nil bundle:nil];
+    [self.view addSubview:restauranteVC.view];
+    [self addChildViewController:restauranteVC];
   }
   return  self;
 }

@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A44077A4-B792-4A07-9098-FD5DDC54367B</string>
+	<string>352F9665-A57E-477F-938F-8AB1CA176577</string>
 	<key>IDESourceControlProjectName</key>
 	<string>HoneyDew</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/tcoderwang913/HoneyDew.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>HoneyDew/HoneyDew.xcodeproj</string>
+	<string>HoneyDew/HoneyDew.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C9937BC9BE72EF21B51D1349EFFE1D6308CC0801</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/tcoderwang913/HoneyDew.git</string>

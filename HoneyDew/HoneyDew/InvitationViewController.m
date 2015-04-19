@@ -22,6 +22,7 @@
     UIView *invitationView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     invitationView.backgroundColor = [UIColor whiteColor];
     self.title = @"Invitations";
+    self.tabBarItem.image = [UIImage imageNamed:@"Invite-25"];
     self.view = invitationView;
   }
   return  self;

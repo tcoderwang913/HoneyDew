@@ -24,34 +24,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
-  [FBLoginView class];
-  [FBProfilePictureView class];
+//  [FBLoginView class];
+//  [FBProfilePictureView class];
   
-  return YES;
+//  return YES;
   
-//  ViewController *vc = [[ViewController alloc ] initWithNibName:nil bundle:nil];
-//  self.window.rootViewController = vc;
-//    self.tabBarController = [[UITabBarController alloc]  init];
-//
-//    HomeScreenViewController *homeScreenVC = [[HomeScreenViewController alloc] init];
-//    InvitationViewController *invitationVC = [[InvitationViewController alloc]  init];
-//    SettingsViewController *settingVC = [[SettingsViewController alloc] init];
-//
-//    [[UITabBarItem appearance] setTitleTextAttributes:@{
-//                                                        NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:20.0f],
-//                                                        NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:48/255.0 blue:92/255.0 alpha:1.0],}
-//                                             forState:UIControlStateNormal];
-//
-//    [[UITabBarItem appearance] setTitleTextAttributes:@{
-//                                                        NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:20.0f],
-//                                                        NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:138/255.0 blue:196/255.0 alpha:1.0],}
-//                                             forState:UIControlStateSelected];
-//
-//    self.tabBarController.viewControllers = @[homeScreenVC, invitationVC,settingVC];
-//    self.window.rootViewController = self.tabBarController;
+  ViewController *vc = [[ViewController alloc ] initWithNibName:nil bundle:nil];
+  self.window.rootViewController = vc;
+    self.tabBarController = [[UITabBarController alloc]  init];
+
+    HomeScreenViewController *homeScreenVC = [[HomeScreenViewController alloc] init];
+    InvitationViewController *invitationVC = [[InvitationViewController alloc]  init];
+    SettingsViewController *settingVC = [[SettingsViewController alloc] init];
+
+    [[UITabBarItem appearance] setTitleTextAttributes:@{
+                                                        NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
+                                                        NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:48/255.0 blue:92/255.0 alpha:1.0],}
+                                             forState:UIControlStateNormal];
+
+    [[UITabBarItem appearance] setTitleTextAttributes:@{
+                                                        NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
+                                                        NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:138/255.0 blue:196/255.0 alpha:1.0],}
+                                             forState:UIControlStateSelected];
+
+    self.tabBarController.viewControllers = @[homeScreenVC, invitationVC,settingVC];
+    self.window.rootViewController = self.tabBarController;
   
 
-//  return YES;
+  return YES;
   
 }
 
