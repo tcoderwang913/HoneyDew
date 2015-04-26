@@ -389,6 +389,7 @@
 					"$(PROJECT_DIR)/HoneyDew",
 				);
 				INFOPLIST_FILE = HoneyDew/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -405,6 +406,7 @@
 					"$(PROJECT_DIR)/HoneyDew",
 				);
 				INFOPLIST_FILE = HoneyDew/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
