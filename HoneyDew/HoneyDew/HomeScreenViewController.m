@@ -7,8 +7,17 @@
 //
 
 #import "HomeScreenViewController.h"
-#import "RestauranteCollectionViewController.h"
+
+static const CGFloat kImageSize = 80;
+static const CGFloat kHorizontalMargin = 10;
+static const CGFloat kVerticalMargin = 10;
+static const CGFloat kLabelHeight = 40;
+
 @interface HomeScreenViewController ()
+
+@property (nonatomic, strong) UILabel *topYelpRatedLabel;
+@property (nonatomic, strong) UILabel *bloggerLabel;
+@property (nonatomic, strong) UILabel *diningDealsLabel;
 
 @end
 
@@ -24,13 +33,57 @@
     self.tabBarItem.image = [UIImage imageNamed:@"Home-25"];
     self.view = homeScreenView;
     
-    RestauranteCollectionViewController *restauranteVC = [[RestauranteCollectionViewController alloc] initWithNibName:nil bundle:nil];
-    [self.view addSubview:restauranteVC.view];
-    [self addChildViewController:restauranteVC];
+    [homeScreenView addSubview:self.topYelpRatedLabel];
+    [homeScreenView addSubview:self.bloggerLabel];
+    [homeScreenView addSubview:self.diningDealsLabel];
+  
   }
   return  self;
 }
 
+
+- (UILabel*)topYelpRatedLabel
+{
+  if (_topYelpRatedLabel == nil)
+  {
+    _topYelpRatedLabel = [[UILabel alloc] initWithFrame: CGRectMake(kHorizontalMargin, kVerticalMargin + 44, self.view.bounds.size.width, kLabelHeight)];
+    _topYelpRatedLabel.textAlignment = NSTextAlignmentCenter;
+    _topYelpRatedLabel.backgroundColor = [UIColor clearColor];
+    _topYelpRatedLabel.textColor = [UIColor colorWithRed:0 green:0.2 blue:0.8 alpha:1.0];
+    _topYelpRatedLabel.numberOfLines = 1;
+    _topYelpRatedLabel.text = @"Top Yelp Rated";
+    _topYelpRatedLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold"  size:14];
+  }
+  return _topYelpRatedLabel;
+}
+
+- (UILabel *)bloggerLabel
+{
+  if (_bloggerLabel == nil) {
+    _bloggerLabel = [[UILabel alloc] initWithFrame:CGRectMake(kHorizontalMargin, self.topYelpRatedLabel.frame.origin.y + self.topYelpRatedLabel.frame.size.height + kVerticalMargin + kImageSize, self.view.bounds.size.width, kLabelHeight)];
+    _bloggerLabel.textAlignment = NSTextAlignmentCenter;
+    _bloggerLabel.backgroundColor = [UIColor clearColor];
+    _bloggerLabel.textColor = [UIColor colorWithRed:0 green:0.2 blue:0.8 alpha:1.0];
+    _bloggerLabel.numberOfLines = 1;
+    _bloggerLabel.text = @"Blogger Food";
+    _bloggerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold"  size:14];
+  }
+  return _bloggerLabel;
+}
+
+- (UILabel *)diningDealsLabel
+{
+  if (_diningDealsLabel == nil) {
+    _diningDealsLabel = [[UILabel alloc] initWithFrame:CGRectMake(kHorizontalMargin, self.bloggerLabel.frame.origin.y + self.bloggerLabel.frame.size.height + kVerticalMargin + kImageSize, self.view.bounds.size.width, kLabelHeight)];
+    _diningDealsLabel.textAlignment = NSTextAlignmentCenter;
+    _diningDealsLabel.backgroundColor = [UIColor clearColor];
+    _diningDealsLabel.textColor = [UIColor colorWithRed:0 green:0.2 blue:0.8 alpha:1.0];
+    _diningDealsLabel.numberOfLines = 1;
+    _diningDealsLabel.text = @"Dining Deals";
+    _diningDealsLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold"  size:14];
+  }
+  return _diningDealsLabel;
+}
 
 
 

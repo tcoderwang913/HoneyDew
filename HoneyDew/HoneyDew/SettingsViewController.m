@@ -14,9 +14,10 @@
 
 @implementation SettingsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-  self = [super initWithStyle:UITableViewStylePlain];
+  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+  
   if (self) {
     UITableView  *settingView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     settingView.backgroundColor = [UIColor whiteColor];
@@ -27,6 +28,21 @@
   
   return self;
 }
+
+
+//- (id)initWithStyle:(UITableViewStyle)style
+//{
+//  self = [super initWithStyle:UITableViewStylePlain];
+//  if (self) {
+//    UITableView  *settingView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    settingView.backgroundColor = [UIColor whiteColor];
+//    self.title = @"Settings";
+//    self.tabBarItem.image = [UIImage imageNamed:@"Settings-26"];
+//    self.view = settingView;
+//  }
+//  
+//  return self;
+//}
 
 
 - (void)viewDidLoad {
@@ -56,15 +72,15 @@
     return 10;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
     // Configure the cell...
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
