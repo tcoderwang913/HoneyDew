@@ -22,6 +22,7 @@
 		57EFA1DF1AE44A2200809D48 /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 57EFA1DC1AE44A2200809D48 /* Home-25.png */; };
 		57EFA1E41AE44F1000809D48 /* RestauranteCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EFA1E31AE44F1000809D48 /* RestauranteCollectionViewController.m */; };
 		B6676E011AF6F74B002DAE9D /* BloggerCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */; };
+		B6E6581C1AF9D53600333102 /* HomeBloggerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E6581B1AF9D53600333102 /* HomeBloggerDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		57EFA1E31AE44F1000809D48 /* RestauranteCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestauranteCollectionViewController.m; sourceTree = "<group>"; };
 		B6676DFF1AF6F74B002DAE9D /* BloggerCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerCellTableViewCell.h; sourceTree = "<group>"; };
 		B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerCellTableViewCell.m; sourceTree = "<group>"; };
+		B6E6581A1AF9D53600333102 /* HomeBloggerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeBloggerDetailViewController.h; sourceTree = "<group>"; };
+		B6E6581B1AF9D53600333102 /* HomeBloggerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeBloggerDetailViewController.m; sourceTree = "<group>"; };
 		D8371B4A75A828D7B52BEC62 /* libPods-HoneyDew.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HoneyDew.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +110,8 @@
 			children = (
 				575BD68C1ADE4145001A8695 /* HomeScreenViewController.h */,
 				575BD68D1ADE4145001A8695 /* HomeScreenViewController.m */,
+				B6E6581A1AF9D53600333102 /* HomeBloggerDetailViewController.h */,
+				B6E6581B1AF9D53600333102 /* HomeBloggerDetailViewController.m */,
 				B6676DFF1AF6F74B002DAE9D /* BloggerCellTableViewCell.h */,
 				B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */,
 				575BD68E1ADE4145001A8695 /* InvitationViewController.h */,
@@ -280,6 +285,7 @@
 				575BD6621ADE3B16001A8695 /* AppDelegate.m in Sources */,
 				57EFA1E41AE44F1000809D48 /* RestauranteCollectionViewController.m in Sources */,
 				575BD6941ADE4145001A8695 /* SettingsViewController.m in Sources */,
+				B6E6581C1AF9D53600333102 /* HomeBloggerDetailViewController.m in Sources */,
 				575BD6931ADE4145001A8695 /* InvitationViewController.m in Sources */,
 				575BD65F1ADE3B16001A8695 /* main.m in Sources */,
 			);

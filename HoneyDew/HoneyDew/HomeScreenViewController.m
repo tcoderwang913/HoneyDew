@@ -8,6 +8,7 @@
 
 #import "HomeScreenViewController.h"
 #import "BloggerCellTableViewCell.h"
+#import "HomeBloggerDetailViewController.h"
 
 static const CGFloat kImageSize = 80;
 static const CGFloat kHorizontalMargin = 10;
@@ -36,6 +37,11 @@ static const CGFloat kTopVerticalMargin = 40;
     [self.view addSubview:self.bloggerCollectionView];
   }
   return  self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewDidLoad {
@@ -97,7 +103,8 @@ static const CGFloat kTopVerticalMargin = 40;
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-  
+  HomeBloggerDetailViewController *blogerDetailVC = [[HomeBloggerDetailViewController alloc] init];
+  [self.navigationController pushViewController:blogerDetailVC animated:YES];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout

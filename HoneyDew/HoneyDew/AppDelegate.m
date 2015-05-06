@@ -33,7 +33,9 @@
   self.window.rootViewController = vc;
     self.tabBarController = [[UITabBarController alloc]  init];
 
-    HomeScreenViewController *homeScreenVC = [[HomeScreenViewController alloc] init];
+  HomeScreenViewController *homeScreenVC = [[HomeScreenViewController alloc] init];
+  UINavigationController *homeScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:homeScreenVC];
+  
     InvitationViewController *invitationVC = [[InvitationViewController alloc]  init];
     SettingsViewController *settingVC = [[SettingsViewController alloc] init];
 
@@ -47,7 +49,7 @@
                                                         NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:138/255.0 blue:196/255.0 alpha:1.0],}
                                              forState:UIControlStateSelected];
 
-    self.tabBarController.viewControllers = @[homeScreenVC, invitationVC,settingVC];
+    self.tabBarController.viewControllers = @[homeScreenNavigationController, invitationVC,settingVC];
     self.window.rootViewController = self.tabBarController;
   
 
