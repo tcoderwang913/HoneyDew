@@ -12,6 +12,7 @@ typedef enum : NSUInteger {
   BloggerDetailCellTypeMainMenu,
   BloggerDetailCellTypePrice,
   BloggerDetailCellTypeMore,
+  BloggerDetailCellTypeCall
 } BloggerDetailCellType;
 
 @interface BloggerDetailTableViewCell : UITableViewCell
@@ -20,6 +21,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) UILabel *detailText;
 @property (nonatomic) BloggerDetailCellType currentType;
 
++ (CGFloat)heightForCellWithType:(NSUInteger)type;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 - (void)configureCellForType:(NSUInteger)type;
 @end
