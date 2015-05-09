@@ -13,7 +13,7 @@
 static const CGFloat kHorizontalMargin = 10;
 static const CGFloat kVerticalMargin = 10;
 static const CGFloat kLabelHeight = 40;
-static const CGFloat kTopVerticalMargin = 40;
+static const CGFloat kTopVerticalMargin = 80;
 
 @interface HomeScreenViewController ()
 @property (nonatomic, strong) UILabel *bloggerLabel;
@@ -40,7 +40,6 @@ static const CGFloat kTopVerticalMargin = 40;
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewDidLoad {

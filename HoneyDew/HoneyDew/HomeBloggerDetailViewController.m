@@ -36,7 +36,6 @@ const static CGFloat kBorderTopMargin = 20;
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   self.view.backgroundColor = [UIColor whiteColor];
-  self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -74,6 +73,8 @@ const static CGFloat kBorderTopMargin = 20;
   if (cell == nil) {
     cell = [[BloggerDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailCellIdentifier];
   }
+  
+  [cell configureCellForType:indexPath.row];
   
   cell.mainText.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
   cell.detailText.text = @"detail text";

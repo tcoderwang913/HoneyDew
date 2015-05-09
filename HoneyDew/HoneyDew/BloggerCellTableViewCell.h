@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BloggerCellTableViewCell : UICollectionViewCell
-@property (nonatomic, strong) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIImage *thumbnail;
 @end

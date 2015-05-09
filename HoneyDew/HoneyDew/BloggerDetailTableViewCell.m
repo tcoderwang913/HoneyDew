@@ -8,6 +8,10 @@
 
 #import "BloggerDetailTableViewCell.h"
 
+const static CGFloat kBloggerCellMargin = 10;
+const static CGFloat kCellIconSide = 30;
+const static CGFloat kCellTextWidth = 250;
+
 @implementation BloggerDetailTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -26,11 +30,53 @@
   return self;
 }
 
+- (void)configureCellForType:(NSUInteger)type {
+  switch (type) {
+    case BloggerDetailCellTypeMainMenu:
+    {
+      _currentType = BloggerDetailCellTypeMainMenu;
+    }
+      break;
+    case BloggerDetailCellTypeMore:
+    {
+      _currentType = BloggerDetailCellTypeMore;
+    }
+      break;
+    case BloggerDetailCellTypePrice:
+    {
+      _currentType = BloggerDetailCellTypePrice;
+    }
+      break;
+    default:
+      break;
+  }
+}
+
 - (void)layoutSubviews {
   [super layoutSubviews];
-  _cellIcon.frame = CGRectMake(5, 5, 30, 30);
-  _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + 5, 2, 200, 25);
-  _detailText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + 5, 30, 200, 12);
+  
+  switch (_currentType) {
+    case BloggerDetailCellTypeMainMenu:
+    {
+      
+    }
+      break;
+    case BloggerDetailCellTypePrice:
+    {
+      
+    }
+      break;
+    case BloggerDetailCellTypeMore:
+    {
+      
+    }
+      break;
+    default:
+      break;
+  }
+  _cellIcon.frame = CGRectMake(kBloggerCellMargin, 5, kCellIconSide, kCellIconSide);
+  _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 2, kCellTextWidth, 25);
+  _detailText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 30, kCellTextWidth, 12);
 }
 
 @end

@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+  BloggerDetailCellTypeMainMenu,
+  BloggerDetailCellTypePrice,
+  BloggerDetailCellTypeMore,
+} BloggerDetailCellType;
+
 @interface BloggerDetailTableViewCell : UITableViewCell
 @property (nonatomic, strong) UIImageView *cellIcon;
 @property (nonatomic, strong) UILabel *mainText;
 @property (nonatomic, strong) UILabel *detailText;
+@property (nonatomic) BloggerDetailCellType currentType;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
+- (void)configureCellForType:(NSUInteger)type;
 @end
