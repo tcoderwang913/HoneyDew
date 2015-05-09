@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		573A01871AFDCB3B00907A38 /* InvitationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 573A01861AFDCB3B00907A38 /* InvitationTableViewCell.m */; };
 		575BD65F1ADE3B16001A8695 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD65E1ADE3B16001A8695 /* main.m */; };
 		575BD6621ADE3B16001A8695 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD6611ADE3B16001A8695 /* AppDelegate.m */; };
 		575BD6651ADE3B16001A8695 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD6641ADE3B16001A8695 /* ViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		573A01851AFDCB3B00907A38 /* InvitationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationTableViewCell.h; sourceTree = "<group>"; };
+		573A01861AFDCB3B00907A38 /* InvitationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationTableViewCell.m; sourceTree = "<group>"; };
 		575BD6591ADE3B16001A8695 /* HoneyDew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoneyDew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		575BD65D1ADE3B16001A8695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		575BD65E1ADE3B16001A8695 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 				B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */,
 				575BD68E1ADE4145001A8695 /* InvitationViewController.h */,
 				575BD68F1ADE4145001A8695 /* InvitationViewController.m */,
+				573A01851AFDCB3B00907A38 /* InvitationTableViewCell.h */,
+				573A01861AFDCB3B00907A38 /* InvitationTableViewCell.m */,
 				575BD6901ADE4145001A8695 /* SettingsViewController.h */,
 				575BD6911ADE4145001A8695 /* SettingsViewController.m */,
 				57EFA1E21AE44F1000809D48 /* RestauranteCollectionViewController.h */,
@@ -289,6 +294,7 @@
 				575BD6921ADE4145001A8695 /* HomeScreenViewController.m in Sources */,
 				B6676E011AF6F74B002DAE9D /* BloggerCellTableViewCell.m in Sources */,
 				575BD6621ADE3B16001A8695 /* AppDelegate.m in Sources */,
+				573A01871AFDCB3B00907A38 /* InvitationTableViewCell.m in Sources */,
 				57EFA1E41AE44F1000809D48 /* RestauranteCollectionViewController.m in Sources */,
 				575BD6941ADE4145001A8695 /* SettingsViewController.m in Sources */,
 				B6E6581C1AF9D53600333102 /* HomeBloggerDetailViewController.m in Sources */,

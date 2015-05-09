@@ -10,7 +10,6 @@
 #import "BloggerCellTableViewCell.h"
 #import "HomeBloggerDetailViewController.h"
 
-static const CGFloat kImageSize = 80;
 static const CGFloat kHorizontalMargin = 10;
 static const CGFloat kVerticalMargin = 10;
 static const CGFloat kLabelHeight = 40;
