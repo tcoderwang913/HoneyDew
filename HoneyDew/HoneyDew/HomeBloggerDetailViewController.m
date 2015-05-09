@@ -58,6 +58,10 @@ const static CGFloat kBorderTopMargin = 20;
   [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return [BloggerDetailTableViewCell heightForCellWithType:indexPath.row];
+}
+
 #pragma mark - UITableView data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   return 2;
@@ -76,8 +80,6 @@ const static CGFloat kBorderTopMargin = 20;
   
   [cell configureCellForType:indexPath.row];
   
-  cell.mainText.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
-  cell.detailText.text = @"detail text";
   cell.backgroundColor = [UIColor whiteColor];
   return cell;
 }
@@ -150,7 +152,7 @@ const static CGFloat kBorderTopMargin = 20;
   self.ratingReviewLabel.frame = CGRectMake(imgView.frame.origin.x + imgView.frame.size.width + kBorderLRMargin, 5, 100, 20);
   self.openHourLabel.frame = CGRectMake(kBorderLRMargin, self.ratingReviewBgView.frame.origin.y + self.ratingReviewBgView.frame.size.height + kBorderLRMargin, self.view.frame.size.width - kBorderLRMargin * 2, self.openHourLabel.font.lineHeight + 2);
   
-  self.detailTableView.frame = CGRectMake(0, self.openHourLabel.frame.origin.y + self.openHourLabel.frame.size.height + kBorderLRMargin, self.view.frame.size.width, 600);
+  self.detailTableView.frame = CGRectMake(0, self.openHourLabel.frame.origin.y + self.openHourLabel.frame.size.height, self.view.frame.size.width, 600);
   self.mainScrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.detailTableView.frame.size.height + self.detailTableView.frame.origin.y);
 }
 
