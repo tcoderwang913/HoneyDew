@@ -8,7 +8,6 @@
 
 #import "SettingsViewController.h"
 
-static const CGFloat kHeightOfNavBar = 64;
 
 @interface SettingsViewController ()
 
