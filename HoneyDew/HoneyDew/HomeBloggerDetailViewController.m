@@ -7,6 +7,7 @@
 //
 
 #import "HomeBloggerDetailViewController.h"
+#import "BloggerDetailTableViewCell.h"
 
 const static CGFloat kBorderLRMargin = 10;
 const static CGFloat kRatingStarMargin = 5;
@@ -20,6 +21,7 @@ const static CGFloat kBorderTopMargin = 20;
 @property (nonatomic, strong) UILabel *rstrtNameLabel;
 @property (nonatomic, strong) UILabel *rstrtSummaryLabel;
 @property (nonatomic, strong) UILabel *openHourLabel;
+@property (nonatomic, strong) UITableView *detailTableView;
 @end
 
 @implementation HomeBloggerDetailViewController
@@ -52,6 +54,33 @@ const static CGFloat kBorderTopMargin = 20;
   [super didReceiveMemoryWarning];
 }
 
+#pragma mark - UITableView delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+#pragma mark - UITableView data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return 4;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *detailCellIdentifier = @"DetailCellIdentifier";
+  BloggerDetailTableViewCell *cell = (BloggerDetailTableViewCell*)[tableView dequeueReusableCellWithIdentifier:detailCellIdentifier];
+  if (cell == nil) {
+    cell = [[BloggerDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailCellIdentifier];
+  }
+  
+  cell.mainText.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+  cell.detailText.text = @"detail text";
+  cell.backgroundColor = [UIColor whiteColor];
+  return cell;
+}
+
 #pragma mark - private methods
 - (void)createUI {
   _mainScrollView = [[UIScrollView alloc] init];
@@ -82,11 +111,19 @@ const static CGFloat kBorderTopMargin = 20;
   _openHourLabel.textColor = [UIColor blackColor];
   _openHourLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light"  size:15];
   
+  _detailTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+  _detailTableView.delegate = self;
+  _detailTableView.dataSource = self;
+  _detailTableView.backgroundColor = [UIColor clearColor];
+  
   [self.view addSubview:_mainScrollView];
   [_mainScrollView addSubview:_rstrtNameLabel];
   [_mainScrollView addSubview:_rstrtSummaryLabel];
   [_mainScrollView addSubview:_ratingReviewBgView];
   [_mainScrollView addSubview:_openHourLabel];
+  [_mainScrollView addSubview:_detailTableView];
+  
+  //[_detailTableView registerClass:[HomeBloggerDetailViewController class] forCellReuseIdentifier:@"DetailCellIdentifier"];
 }
 
 - (void)updateUIWithData {
@@ -111,6 +148,9 @@ const static CGFloat kBorderTopMargin = 20;
   }
   self.ratingReviewLabel.frame = CGRectMake(imgView.frame.origin.x + imgView.frame.size.width + kBorderLRMargin, 5, 100, 20);
   self.openHourLabel.frame = CGRectMake(kBorderLRMargin, self.ratingReviewBgView.frame.origin.y + self.ratingReviewBgView.frame.size.height + kBorderLRMargin, self.view.frame.size.width - kBorderLRMargin * 2, self.openHourLabel.font.lineHeight + 2);
+  
+  self.detailTableView.frame = CGRectMake(0, self.openHourLabel.frame.origin.y + self.openHourLabel.frame.size.height + kBorderLRMargin, self.view.frame.size.width, 600);
+  self.mainScrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.detailTableView.frame.size.height + self.detailTableView.frame.origin.y);
 }
 
 @end

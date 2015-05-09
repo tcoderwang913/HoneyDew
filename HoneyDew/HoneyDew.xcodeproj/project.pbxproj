@@ -21,6 +21,7 @@
 		57EFA1DE1AE44A2200809D48 /* Settings-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 57EFA1DB1AE44A2200809D48 /* Settings-26.png */; };
 		57EFA1DF1AE44A2200809D48 /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 57EFA1DC1AE44A2200809D48 /* Home-25.png */; };
 		57EFA1E41AE44F1000809D48 /* RestauranteCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EFA1E31AE44F1000809D48 /* RestauranteCollectionViewController.m */; };
+		B61167F11AFDD86300AAA022 /* BloggerDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B61167F01AFDD86300AAA022 /* BloggerDetailTableViewCell.m */; };
 		B6676E011AF6F74B002DAE9D /* BloggerCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */; };
 		B6E6581C1AF9D53600333102 /* HomeBloggerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E6581B1AF9D53600333102 /* HomeBloggerDetailViewController.m */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,8 @@
 		57EFA1DC1AE44A2200809D48 /* Home-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-25.png"; sourceTree = "<group>"; };
 		57EFA1E21AE44F1000809D48 /* RestauranteCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestauranteCollectionViewController.h; sourceTree = "<group>"; };
 		57EFA1E31AE44F1000809D48 /* RestauranteCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestauranteCollectionViewController.m; sourceTree = "<group>"; };
+		B61167EF1AFDD86300AAA022 /* BloggerDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerDetailTableViewCell.h; sourceTree = "<group>"; };
+		B61167F01AFDD86300AAA022 /* BloggerDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerDetailTableViewCell.m; sourceTree = "<group>"; };
 		B6676DFF1AF6F74B002DAE9D /* BloggerCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerCellTableViewCell.h; sourceTree = "<group>"; };
 		B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerCellTableViewCell.m; sourceTree = "<group>"; };
 		B6E6581A1AF9D53600333102 /* HomeBloggerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeBloggerDetailViewController.h; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				575BD68D1ADE4145001A8695 /* HomeScreenViewController.m */,
 				B6E6581A1AF9D53600333102 /* HomeBloggerDetailViewController.h */,
 				B6E6581B1AF9D53600333102 /* HomeBloggerDetailViewController.m */,
+				B61167EF1AFDD86300AAA022 /* BloggerDetailTableViewCell.h */,
+				B61167F01AFDD86300AAA022 /* BloggerDetailTableViewCell.m */,
 				B6676DFF1AF6F74B002DAE9D /* BloggerCellTableViewCell.h */,
 				B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */,
 				575BD68E1ADE4145001A8695 /* InvitationViewController.h */,
@@ -280,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				575BD6651ADE3B16001A8695 /* ViewController.m in Sources */,
+				B61167F11AFDD86300AAA022 /* BloggerDetailTableViewCell.m in Sources */,
 				575BD6921ADE4145001A8695 /* HomeScreenViewController.m in Sources */,
 				B6676E011AF6F74B002DAE9D /* BloggerCellTableViewCell.m in Sources */,
 				575BD6621ADE3B16001A8695 /* AppDelegate.m in Sources */,
