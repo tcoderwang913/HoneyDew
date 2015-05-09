@@ -7,8 +7,10 @@
 //
 
 #import "SettingsViewController.h"
+static const CGFloat kHeightOfNavBar = 44;
 
 @interface SettingsViewController ()
+@property (nonatomic, strong) UINavigationBar *navBar;
 
 @end
 
@@ -24,25 +26,23 @@
     self.title = @"Settings";
     self.tabBarItem.image = [UIImage imageNamed:@"Settings-26"];
     self.view = settingView;
+    [self.view addSubview:self.navBar];
   }
   
   return self;
 }
 
-
-//- (id)initWithStyle:(UITableViewStyle)style
-//{
-//  self = [super initWithStyle:UITableViewStylePlain];
-//  if (self) {
-//    UITableView  *settingView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    settingView.backgroundColor = [UIColor whiteColor];
-//    self.title = @"Settings";
-//    self.tabBarItem.image = [UIImage imageNamed:@"Settings-26"];
-//    self.view = settingView;
-//  }
-//  
-//  return self;
-//}
+- (UINavigationBar *)navBar
+{
+  if (_navBar == nil) {
+    _navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeightOfNavBar)];
+    UINavigationItem* item = [[UINavigationItem alloc] initWithTitle:@"Settings"];
+    
+    _navBar.backgroundColor = [UIColor colorWithRed:0.5 green:0.6 blue:1 alpha:1.0];
+    [_navBar pushNavigationItem:item animated:NO];
+  }
+  return _navBar;
+}
 
 
 - (void)viewDidLoad {
