@@ -10,7 +10,7 @@
 #import "InvitationTableViewCell.h"
 
 
-static const CGFloat kHeightOfNavBar = 44;
+static const CGFloat kHeightOfNavBar = 64;
 static const NSInteger kNumberOfSections = 2;
 static const CGFloat kHeightOfTableViewCell = 60;
 
@@ -136,6 +136,11 @@ static NSString *cellIdentifier = @"InvitationTableViewCellIdentifier";
     cell.dateLabel.text =  dateString;
   }
   return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  
 }
 
 

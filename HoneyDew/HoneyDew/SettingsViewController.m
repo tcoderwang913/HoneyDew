@@ -7,10 +7,13 @@
 //
 
 #import "SettingsViewController.h"
-static const CGFloat kHeightOfNavBar = 44;
+
+static const CGFloat kHeightOfNavBar = 64;
 
 @interface SettingsViewController ()
+
 @property (nonatomic, strong) UINavigationBar *navBar;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -21,12 +24,13 @@ static const CGFloat kHeightOfNavBar = 44;
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   
   if (self) {
-    UITableView  *settingView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    settingView.backgroundColor = [UIColor whiteColor];
+    self.view.frame = [UIScreen mainScreen].bounds;
+    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Settings";
     self.tabBarItem.image = [UIImage imageNamed:@"Settings-26"];
-    self.view = settingView;
     [self.view addSubview:self.navBar];
+    [self.view addSubview:self.tableView];
+    
   }
   
   return self;
@@ -60,6 +64,19 @@ static const CGFloat kHeightOfNavBar = 44;
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark -- table view
+
+-(UITableView *)tableView
+{
+  if (_tableView == nil) {
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.navBar.frame.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.navBar.frame.size.height)];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+  }
+  return _tableView;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -74,11 +91,12 @@ static const CGFloat kHeightOfNavBar = 44;
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"settingsCellIdentifier"];
+  if (!cell) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"settingsCellIdentifier"];
+  }
+  
+  return cell;
 }
 
 
