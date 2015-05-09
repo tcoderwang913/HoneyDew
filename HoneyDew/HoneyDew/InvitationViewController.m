@@ -125,6 +125,7 @@ static NSString *cellIdentifier = @"InvitationTableViewCellIdentifier";
                                                           timeStyle:NSDateFormatterFullStyle];
     cell.dateLabel.text =  dateString;
   }
+  cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   return cell;
 }
 

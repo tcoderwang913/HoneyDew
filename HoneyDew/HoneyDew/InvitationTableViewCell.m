@@ -48,10 +48,8 @@ static CGFloat kMargin = 10.0f;
 {
   [super layoutSubviews];
   
-  CGSize sizeOfNameLabel = [self.nameLabel sizeThatFits:self.contentView.bounds.size];
-  self.nameLabel.frame = CGRectMake(kMargin, kMargin, sizeOfNameLabel.width, sizeOfNameLabel.height);
-  CGSize sizeOfDateLabel = [self.dateLabel sizeThatFits:self.contentView.bounds.size];
-  self.dateLabel.frame = CGRectMake(self.nameLabel.frame.size.width + kMargin, kMargin, sizeOfDateLabel.width, sizeOfDateLabel.height);
+  self.nameLabel.frame = CGRectMake(kMargin, kMargin, self.contentView.frame.size.width/2, self.contentView.frame.size.height);
+  self.dateLabel.frame = CGRectMake(self.nameLabel.frame.size.width, kMargin, self.contentView.frame.size.width/2, self.contentView.frame.size.height);
 }
 
 
