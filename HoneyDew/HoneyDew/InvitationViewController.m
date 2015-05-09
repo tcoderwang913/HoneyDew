@@ -8,9 +8,8 @@
 
 #import "InvitationViewController.h"
 #import "InvitationTableViewCell.h"
+#import "IncomingInvitationDetailViewController.h"
 
-
-static const CGFloat kHeightOfNavBar = 64;
 static const NSInteger kNumberOfSections = 2;
 static const CGFloat kHeightOfTableViewCell = 60;
 
@@ -18,7 +17,6 @@ static NSString *cellIdentifier = @"InvitationTableViewCellIdentifier";
 
 @interface InvitationViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UINavigationBar *navBar;
 @property (nonatomic, strong) UITableView *tableView;
 
 
@@ -36,28 +34,20 @@ static NSString *cellIdentifier = @"InvitationTableViewCellIdentifier";
     self.title = @"Invitations";
     self.tabBarItem.image = [UIImage imageNamed:@"Invite-25"];
     self.view = invitationView;
-    [self.view addSubview:self.navBar];
     [self.view addSubview:self.tableView];
   }
   return  self;
 }
 
 
-- (UINavigationBar *)navBar
-{
-  if (_navBar == nil) {
-    _navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeightOfNavBar)];
-    UINavigationItem* item = [[UINavigationItem alloc] initWithTitle:@"Invitations"];
-    _navBar.backgroundColor = [UIColor colorWithRed:0.5 green:0.6 blue:1 alpha:1.0];
-    [_navBar pushNavigationItem:item animated:NO];
-  }
-  return _navBar;
-}
+
 
 - (UITableView *)tableView
 {
   if (_tableView == nil) {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.navBar.frame.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.navBar.frame.size.height)];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height,
+                                                               self.view.bounds.size.width,
+                                                               self.view.bounds.size.height - self.navigationController.navigationBar.frame.size.height)];
     _tableView.dataSource = self;
     _tableView.delegate = self;
   }
@@ -138,9 +128,19 @@ static NSString *cellIdentifier = @"InvitationTableViewCellIdentifier";
   return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+  //enter invitation detail view controller
+  [tableView deselectRowAtIndexPath:indexPath animated:NO];
   
+  NSLog(@"%@", NSStringFromSelector(_cmd));
+  IncomingInvitationDetailViewController *detailVC = [[IncomingInvitationDetailViewController alloc] initWithNibName:nil bundle:nil];
+  
+  InvitationTableViewCell *cell = (InvitationTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+  detailVC.nameLabel.text = cell.nameLabel.text;
+  detailVC.dateLabel.text = cell.dateLabel.text;
+  
+  [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 

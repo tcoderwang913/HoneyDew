@@ -12,7 +12,6 @@ static const CGFloat kHeightOfNavBar = 64;
 
 @interface SettingsViewController ()
 
-@property (nonatomic, strong) UINavigationBar *navBar;
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
@@ -28,7 +27,6 @@ static const CGFloat kHeightOfNavBar = 64;
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Settings";
     self.tabBarItem.image = [UIImage imageNamed:@"Settings-26"];
-    [self.view addSubview:self.navBar];
     [self.view addSubview:self.tableView];
     
   }
@@ -36,17 +34,6 @@ static const CGFloat kHeightOfNavBar = 64;
   return self;
 }
 
-- (UINavigationBar *)navBar
-{
-  if (_navBar == nil) {
-    _navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeightOfNavBar)];
-    UINavigationItem* item = [[UINavigationItem alloc] initWithTitle:@"Settings"];
-    
-    _navBar.backgroundColor = [UIColor colorWithRed:0.5 green:0.6 blue:1 alpha:1.0];
-    [_navBar pushNavigationItem:item animated:NO];
-  }
-  return _navBar;
-}
 
 
 - (void)viewDidLoad {
@@ -70,7 +57,9 @@ static const CGFloat kHeightOfNavBar = 64;
 -(UITableView *)tableView
 {
   if (_tableView == nil) {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.navBar.frame.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.navBar.frame.size.height)];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height,
+                                                               self.view.bounds.size.width,
+                                                               self.view.bounds.size.height - self.navigationController.navigationBar.frame.size.height)];
     _tableView.dataSource = self;
     _tableView.delegate = self;
   }

@@ -36,21 +36,24 @@
   HomeScreenViewController *homeScreenVC = [[HomeScreenViewController alloc] init];
   UINavigationController *homeScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:homeScreenVC];
   
-    InvitationViewController *invitationVC = [[InvitationViewController alloc]  init];
-    SettingsViewController *settingVC = [[SettingsViewController alloc] init];
+  InvitationViewController *invitationVC = [[InvitationViewController alloc]  init];
+  UINavigationController *invitationScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:invitationVC];
+  
+  SettingsViewController *settingVC = [[SettingsViewController alloc] init];
+  UINavigationController *settingScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:settingVC];
+  
+  [[UITabBarItem appearance] setTitleTextAttributes:@{
+                                                      NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
+                                                      NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:48/255.0 blue:92/255.0 alpha:1.0],}
+                                           forState:UIControlStateNormal];
 
-    [[UITabBarItem appearance] setTitleTextAttributes:@{
-                                                        NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
-                                                        NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:48/255.0 blue:92/255.0 alpha:1.0],}
-                                             forState:UIControlStateNormal];
+  [[UITabBarItem appearance] setTitleTextAttributes:@{
+                                                      NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
+                                                      NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:138/255.0 blue:196/255.0 alpha:1.0],}
+                                           forState:UIControlStateSelected];
 
-    [[UITabBarItem appearance] setTitleTextAttributes:@{
-                                                        NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
-                                                        NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:138/255.0 blue:196/255.0 alpha:1.0],}
-                                             forState:UIControlStateSelected];
-
-    self.tabBarController.viewControllers = @[homeScreenNavigationController, invitationVC,settingVC];
-    self.window.rootViewController = self.tabBarController;
+  self.tabBarController.viewControllers = @[homeScreenNavigationController, invitationScreenNavigationController,settingScreenNavigationController];
+  self.window.rootViewController = self.tabBarController;
   
 
   return YES;
