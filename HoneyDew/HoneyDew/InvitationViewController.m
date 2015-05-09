@@ -58,6 +58,8 @@ static NSString *cellIdentifier = @"InvitationTableViewCellIdentifier";
 {
   if (_tableView == nil) {
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.navBar.frame.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.navBar.frame.size.height)];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
   }
   return _tableView;
 }
@@ -77,10 +79,10 @@ static NSString *cellIdentifier = @"InvitationTableViewCellIdentifier";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   if (section == 0)
   {
-    return 10; //This is placeholder, will get the data from table view's data source
+    return 5; //This is placeholder, will get the data from table view's data source
   }
   else{
-    return 10;
+    return 5;
   }
 }
 
@@ -89,16 +91,16 @@ static NSString *cellIdentifier = @"InvitationTableViewCellIdentifier";
   switch(section) {
     case 0:
     case 1:
-    default:return 20;
+    default:return 50;
   }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-  UILabel * sectionHeader = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, tableView.frame.size.width, 30.0)];
-  sectionHeader.backgroundColor = [UIColor clearColor];
+  UILabel * sectionHeader = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, tableView.frame.size.width, 50.0)];
+  sectionHeader.backgroundColor = [UIColor blueColor];
   sectionHeader.textAlignment = NSTextAlignmentCenter;
-  sectionHeader.font = [UIFont boldSystemFontOfSize:13];
-  sectionHeader.textColor = [UIColor blueColor];
+  sectionHeader.font = [UIFont boldSystemFontOfSize:18];
+  sectionHeader.textColor = [UIColor whiteColor];
   
   switch(section) {
     case 0:sectionHeader.text = @"Outgoing Invitations"; break;
