@@ -59,7 +59,7 @@ const static CGFloat kBorderTopMargin = 20;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return [BloggerDetailTableViewCell heightForCellWithType:indexPath.row];
+  return [BloggerDetailTableViewCell heightForCellWithType:indexPath.row atSection:indexPath.section];
 }
 
 #pragma mark - UITableView data source
@@ -68,6 +68,16 @@ const static CGFloat kBorderTopMargin = 20;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  switch (section) {
+    case BloggerCellSectionTypeMap:
+      return 3;
+      break;
+    case BloggerCellSectionTypeInfo:
+      return 4;
+      break;
+    default:
+      break;
+  }
   return 4;
 }
 
@@ -78,7 +88,19 @@ const static CGFloat kBorderTopMargin = 20;
     cell = [[BloggerDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailCellIdentifier];
   }
   
-  [cell configureCellForType:indexPath.row];
+  switch (indexPath.section) {
+    case BloggerCellSectionTypeMap:
+    {
+      [cell configureMapCellForType:indexPath.row];
+    }
+      break;
+    case BloggerCellSectionTypeInfo:
+    {
+      [cell configureInfoCellForType:indexPath.row + 3];
+    }
+    default:
+      break;
+  }
   
   cell.backgroundColor = [UIColor whiteColor];
   return cell;

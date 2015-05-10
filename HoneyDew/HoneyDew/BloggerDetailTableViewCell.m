@@ -24,6 +24,7 @@ const static CGFloat kCellTextWidth = 250;
     _detailText.textColor = [UIColor blackColor];
     _detailText.lineBreakMode = NSLineBreakByTruncatingTail;
     _detailText.font = [UIFont systemFontOfSize:12];
+    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self addSubview:_cellIcon];
     [self addSubview:_mainText];
     [self addSubview:_detailText];
@@ -31,8 +32,44 @@ const static CGFloat kCellTextWidth = 250;
   return self;
 }
 
-- (void)configureCellForType:(NSUInteger)type {
+- (void)configureMapCellForType:(NSUInteger)type {
+  _cellIcon.hidden = NO;
+  _mainText.hidden = NO;
+  _detailText.hidden = NO;
+  switch (type) {
+    case BloggerDetailCellTypeMapView:
+    {
+      _currentType = BloggerDetailCellTypeMapView;
+      _cellIcon.hidden = YES;
+      _mainText.hidden = YES;
+      _detailText.hidden = YES;
+    }
+      break;
+    case BloggerDetailCellTypeMapText:
+    {
+      _currentType = BloggerDetailCellTypeMapText;
+      _cellIcon.hidden = YES;
+      _detailText.hidden = YES;
+      _mainText.text = @"1135 Lawrence Expy Sunnyvale, CA 94089";
+    }
+      break;
+    case BloggerDetailCellTypeMapDirection:
+    {
+      _currentType = BloggerDetailCellTypeMapDirection;
+      _cellIcon.image = [UIImage imageNamed:@"direction.png"];
+      _mainText.text = @"Directions";
+      _detailText.text = @"8 min drive";
+    }
+      break;
+    default:
+      break;
+  }
+}
+
+- (void)configureInfoCellForType:(NSUInteger)type {
   _detailText.numberOfLines = 1;
+  _cellIcon.hidden = NO;
+  _mainText.hidden = NO;
   _detailText.hidden = NO;
   switch (type) {
     case BloggerDetailCellTypeMainMenu:
@@ -73,31 +110,64 @@ const static CGFloat kCellTextWidth = 250;
   }
 }
 
-+ (CGFloat)heightForCellWithType:(NSUInteger)type {
++ (CGFloat)heightForCellWithType:(NSUInteger)type atSection:(NSUInteger)section {
   CGFloat ret = 44;
-  switch (type) {
-    case BloggerDetailCellTypeMainMenu:
+  switch (section) {
+    case BloggerCellSectionTypeMap:
     {
-      return 60;
+      switch (type) {
+        case BloggerDetailCellTypeMapView:
+        {
+          ret = 120;
+        }
+          break;
+        case BloggerDetailCellTypeMapText:
+        {
+          ret = 40;
+        }
+          break;
+        case BloggerDetailCellTypeMapDirection:
+        {
+          ret = 40;
+        }
+          break;
+        default:
+          break;
+      }
     }
       break;
-    case BloggerDetailCellTypeMore:
+    case BloggerCellSectionTypeInfo:
     {
-      return 44;
-    }
-      break;
-    case BloggerDetailCellTypePrice:
-    {
-      return 40;
-    }
-      break;
-    case BloggerDetailCellTypeCall:
-    {
-      return 40;
+      type += 3;
+      switch (type) {
+        case BloggerDetailCellTypeMainMenu:
+        {
+          ret = 60;
+        }
+          break;
+        case BloggerDetailCellTypeMore:
+        {
+          ret = 44;
+        }
+          break;
+        case BloggerDetailCellTypePrice:
+        {
+          ret = 40;
+        }
+          break;
+        case BloggerDetailCellTypeCall:
+        {
+          ret = 40;
+        }
+        default:
+          break;
+      }
+
     }
     default:
       break;
   }
+  
   return ret;
 }
 
@@ -105,6 +175,22 @@ const static CGFloat kCellTextWidth = 250;
   [super layoutSubviews];
   
   switch (_currentType) {
+    case BloggerDetailCellTypeMapView:
+    {
+      
+    }
+      break;
+    case BloggerDetailCellTypeMapText:
+    {
+      _mainText.frame = CGRectMake(kBloggerCellMargin, 5, self.frame.size.width - kBloggerCellMargin - 30, 25);
+    }
+      break;
+    case BloggerDetailCellTypeMapDirection:
+    {
+      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 5, kCellIconSide, kCellIconSide);
+      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 5, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 30, 25);
+    }
+      break;
     case BloggerDetailCellTypeMainMenu:
     {
       _cellIcon.frame = CGRectMake(kBloggerCellMargin, 15, kCellIconSide, kCellIconSide);
