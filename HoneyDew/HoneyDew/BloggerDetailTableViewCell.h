@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 typedef enum : NSUInteger {
   BloggerDetailCellTypeMapView,
@@ -23,11 +24,13 @@ typedef enum : NSUInteger {
   BloggerCellSectionTypeInfo
 } BloggerCellSectionType;
 
-@interface BloggerDetailTableViewCell : UITableViewCell
+@interface BloggerDetailTableViewCell : UITableViewCell <MKMapViewDelegate>
 @property (nonatomic, strong) UIImageView *cellIcon;
 @property (nonatomic, strong) UILabel *mainText;
 @property (nonatomic, strong) UILabel *detailText;
 @property (nonatomic) BloggerDetailCellType currentType;
+// TODO: mapView should be extracted
+@property (nonatomic, strong) MKMapView *mapView;
 
 + (CGFloat)heightForCellWithType:(NSUInteger)type atSection:(NSUInteger)section;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;

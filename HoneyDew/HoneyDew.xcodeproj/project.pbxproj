@@ -25,6 +25,7 @@
 		57EFA1E41AE44F1000809D48 /* RestauranteCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EFA1E31AE44F1000809D48 /* RestauranteCollectionViewController.m */; };
 		B61167F11AFDD86300AAA022 /* BloggerDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B61167F01AFDD86300AAA022 /* BloggerDetailTableViewCell.m */; };
 		B6676E011AF6F74B002DAE9D /* BloggerCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */; };
+		B6DD42AC1B08501D0026C1AB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6DD42AB1B08501D0026C1AB /* MapKit.framework */; };
 		B6E6581C1AF9D53600333102 /* HomeBloggerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E6581B1AF9D53600333102 /* HomeBloggerDetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		B61167F01AFDD86300AAA022 /* BloggerDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerDetailTableViewCell.m; sourceTree = "<group>"; };
 		B6676DFF1AF6F74B002DAE9D /* BloggerCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerCellTableViewCell.h; sourceTree = "<group>"; };
 		B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerCellTableViewCell.m; sourceTree = "<group>"; };
+		B6DD42AB1B08501D0026C1AB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B6E6581A1AF9D53600333102 /* HomeBloggerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeBloggerDetailViewController.h; sourceTree = "<group>"; };
 		B6E6581B1AF9D53600333102 /* HomeBloggerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeBloggerDetailViewController.m; sourceTree = "<group>"; };
 		D8371B4A75A828D7B52BEC62 /* libPods-HoneyDew.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HoneyDew.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6DD42AC1B08501D0026C1AB /* MapKit.framework in Frameworks */,
 				575BD6961ADE496E001A8695 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +190,7 @@
 		C4F74602DFB6665E4D1E49DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6DD42AB1B08501D0026C1AB /* MapKit.framework */,
 				D8371B4A75A828D7B52BEC62 /* libPods-HoneyDew.a */,
 			);
 			name = Frameworks;

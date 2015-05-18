@@ -47,6 +47,9 @@ const static CGFloat kBorderTopMargin = 20;
   
   [self updateUIWithData];
   [self manuallyLayoutSubviews];
+  
+  self.locationManager = [[CLLocationManager alloc]init];
+  self.locationManager.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -178,4 +181,8 @@ const static CGFloat kBorderTopMargin = 20;
   self.mainScrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.detailTableView.frame.size.height + self.detailTableView.frame.origin.y);
 }
 
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)
+status {
+  [self.locationManager requestWhenInUseAuthorization];
+}
 @end

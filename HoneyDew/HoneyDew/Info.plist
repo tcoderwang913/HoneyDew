@@ -43,6 +43,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>tionWhenInUseUsageDescription</key>
+	<string>show you cool things nearby</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

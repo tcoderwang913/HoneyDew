@@ -7,8 +7,7 @@
 //
 
 #import "BloggerDetailTableViewCell.h"
-
-const static CGFloat kBloggerCellMargin = 10;
+const static CGFloat kBloggerCellMargin = 15;
 const static CGFloat kCellIconSide = 30;
 const static CGFloat kCellTextWidth = 250;
 
@@ -43,10 +42,40 @@ const static CGFloat kCellTextWidth = 250;
       _cellIcon.hidden = YES;
       _mainText.hidden = YES;
       _detailText.hidden = YES;
+      if (!_mapView) {
+        
+        _mapView = [[MKMapView alloc] initWithFrame:CGRectZero];
+        [self addSubview:_mapView];
+        NSString *address = @"1133 Lawrence Expy, Sunnyvale, CA 94089";
+//        CLLocationCoordinate2D location = [self geoCodeUsingAddress:address];
+//        MKCoordinateSpan span = MKCoordinateSpanMake(0.01 , 0.01);
+//        MKCoordinateRegion region = MKCoordinateRegionMake(location, span);
+//        _mapView.region = region;
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error) {
+          if (placemarks && placemarks.count > 0) {
+            CLPlacemark *topResult = [placemarks objectAtIndex:0];
+            MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
+            MKCoordinateRegion region = self.mapView.region;
+            region.center = [(CLCircularRegion*)placemark.region center];
+            region.span = MKCoordinateSpanMake(0.02, 0.02);
+            [_mapView setRegion:region animated:NO];
+            
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            [annotation setCoordinate:region.center];
+            [_mapView addAnnotation:annotation];
+          }
+        }];
+      }
+      //_mapView.delegate = self;
+      _mapView.zoomEnabled = NO;
+      _mapView.scrollEnabled = NO;
+      _mapView.mapType = MKMapTypeStandard;
     }
       break;
     case BloggerDetailCellTypeMapText:
     {
+      _mapView = nil;
       _currentType = BloggerDetailCellTypeMapText;
       _cellIcon.hidden = YES;
       _detailText.hidden = YES;
@@ -55,6 +84,7 @@ const static CGFloat kCellTextWidth = 250;
       break;
     case BloggerDetailCellTypeMapDirection:
     {
+      _mapView = nil;
       _currentType = BloggerDetailCellTypeMapDirection;
       _cellIcon.image = [UIImage imageNamed:@"direction.png"];
       _mainText.text = @"Directions";
@@ -74,6 +104,7 @@ const static CGFloat kCellTextWidth = 250;
   switch (type) {
     case BloggerDetailCellTypeMainMenu:
     {
+      _mapView = nil;
       _currentType = BloggerDetailCellTypeMainMenu;
       _cellIcon.image = [UIImage imageNamed:@"menu.png"];
       _mainText.text = @"Menu";
@@ -83,6 +114,7 @@ const static CGFloat kCellTextWidth = 250;
       break;
     case BloggerDetailCellTypeMore:
     {
+      _mapView = nil;
       _currentType = BloggerDetailCellTypeMore;
       _cellIcon.image = [UIImage imageNamed:@"more.png"];
       _mainText.text = @"More";
@@ -91,6 +123,7 @@ const static CGFloat kCellTextWidth = 250;
       break;
     case BloggerDetailCellTypePrice:
     {
+      _mapView = nil;
       _currentType = BloggerDetailCellTypePrice;
       _cellIcon.image = [UIImage imageNamed:@"price.png"];
       _mainText.text = @"Price $$(10~50)";
@@ -99,6 +132,7 @@ const static CGFloat kCellTextWidth = 250;
       break;
     case BloggerDetailCellTypeCall:
     {
+      _mapView = nil;
       _currentType = BloggerDetailCellTypeCall;
       _cellIcon.image = [UIImage imageNamed:@"call.png"];
       _mainText.text = @"Call (123) 456-7890";
@@ -177,7 +211,7 @@ const static CGFloat kCellTextWidth = 250;
   switch (_currentType) {
     case BloggerDetailCellTypeMapView:
     {
-      
+      _mapView.frame = self.bounds;
     }
       break;
     case BloggerDetailCellTypeMapText:
@@ -227,5 +261,18 @@ const static CGFloat kCellTextWidth = 250;
   }
 
 }
+
+#pragma mark - location
+//
+//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+//  static NSString *AnnotationIdentifier = @"AnnotationIdentifier";
+//  MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationIdentifier];
+//  if (annotationView == nil) {
+//    annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier];
+//  }
+//  annotationView.enabled = NO;
+//  annotationView.canShowCallout = NO;
+//  return annotationView;
+//}
 
 @end

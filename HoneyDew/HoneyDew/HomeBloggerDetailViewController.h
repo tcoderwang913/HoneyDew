@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface HomeBloggerDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface HomeBloggerDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
 
+@property (nonatomic, strong)  CLLocationManager *locationManager;
 @end
