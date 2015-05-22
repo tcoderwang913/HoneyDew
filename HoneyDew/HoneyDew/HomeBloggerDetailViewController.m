@@ -8,12 +8,13 @@
 
 #import "HomeBloggerDetailViewController.h"
 #import "BloggerDetailTableViewCell.h"
+#import "BloggerMapViewController.h"
 
 const static CGFloat kBorderLRMargin = 10;
 const static CGFloat kRatingStarMargin = 5;
 const static CGFloat kBorderTopMargin = 20;
 
-@interface HomeBloggerDetailViewController ()
+@interface HomeBloggerDetailViewController () <BloggerCellDelegate>
 @property (nonatomic, strong) UIScrollView *mainScrollView;
 @property (nonatomic, strong) UIView *ratingReviewBgView;
 @property (nonatomic, strong) NSMutableArray *ratingStarArray;
@@ -56,13 +57,85 @@ const static CGFloat kBorderTopMargin = 20;
   [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Blogger cell delegate
+- (void)mapCellTapped {
+  BloggerMapViewController *mapViewController = [[BloggerMapViewController alloc] init];
+  mapViewController.view.frame = self.view.bounds;
+  [self.navigationController pushViewController:mapViewController animated:YES];
+}
+
 #pragma mark - UITableView delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [tableView deselectRowAtIndexPath:indexPath animated:NO];
+  switch (indexPath.section) {
+    case BloggerCellSectionTypeMap:
+    {
+      [self selectMapSectionRow:indexPath.row];
+    }
+      break;
+    case BloggerCellSectionTypeInfo:
+    {
+      [self selectInfoSectionRow:indexPath.row + 3];
+    }
+      break;
+    default:
+      break;
+  }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   return [BloggerDetailTableViewCell heightForCellWithType:indexPath.row atSection:indexPath.section];
+}
+
+- (void)selectMapSectionRow:(NSInteger)row {
+  switch (row) {
+    case BloggerDetailCellTypeMapView:
+    {
+      if ([self respondsToSelector:@selector(mapCellTapped)]) {
+        [self mapCellTapped];
+      }
+    }
+      break;
+    case BloggerDetailCellTypeMapDirection:
+    {
+      
+    }
+      break;
+    case BloggerDetailCellTypeMapText:
+    {
+      
+    }
+      break;
+    default:
+      break;
+  }
+}
+
+- (void)selectInfoSectionRow:(NSInteger)row {
+  switch (row) {
+    case BloggerDetailCellTypeCall:
+    {
+      
+    }
+      break;
+    case BloggerDetailCellTypeMainMenu:
+    {
+      
+    }
+      break;
+    case BloggerDetailCellTypeMore:
+    {
+      
+    }
+      break;
+    case BloggerDetailCellTypePrice:
+    {
+      
+    }
+      break;
+    default:
+      break;
+  }
 }
 
 #pragma mark - UITableView data source
@@ -89,6 +162,7 @@ const static CGFloat kBorderTopMargin = 20;
   BloggerDetailTableViewCell *cell = (BloggerDetailTableViewCell*)[tableView dequeueReusableCellWithIdentifier:detailCellIdentifier];
   if (cell == nil) {
     cell = [[BloggerDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailCellIdentifier];
+    cell.delegate = self;
   }
   
   switch (indexPath.section) {

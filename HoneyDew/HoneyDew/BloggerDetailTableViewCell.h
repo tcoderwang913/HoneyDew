@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+@protocol BloggerCellDelegate <NSObject>
+
+@optional
+- (void)mapCellTapped;
+
+@end
+
 typedef enum : NSUInteger {
   BloggerDetailCellTypeMapView,
   BloggerDetailCellTypeMapText,
@@ -28,6 +35,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) UIImageView *cellIcon;
 @property (nonatomic, strong) UILabel *mainText;
 @property (nonatomic, strong) UILabel *detailText;
+@property (nonatomic, weak) id<BloggerCellDelegate> delegate;
 @property (nonatomic) BloggerDetailCellType currentType;
 // TODO: mapView should be extracted
 @property (nonatomic, strong) MKMapView *mapView;

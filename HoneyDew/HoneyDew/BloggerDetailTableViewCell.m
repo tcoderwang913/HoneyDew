@@ -45,7 +45,9 @@ const static CGFloat kCellTextWidth = 250;
       if (!_mapView) {
         
         _mapView = [[MKMapView alloc] initWithFrame:CGRectZero];
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mapTapped:)];
         [self addSubview:_mapView];
+        [self addGestureRecognizer:tapGesture];
         NSString *address = @"1133 Lawrence Expy, Sunnyvale, CA 94089";
 //        CLLocationCoordinate2D location = [self geoCodeUsingAddress:address];
 //        MKCoordinateSpan span = MKCoordinateSpanMake(0.01 , 0.01);
@@ -260,6 +262,10 @@ const static CGFloat kCellTextWidth = 250;
       break;
   }
 
+}
+
+- (void)mapTapped:(UIGestureRecognizer*)recognizer {
+  [self.delegate mapCellTapped];
 }
 
 #pragma mark - location
