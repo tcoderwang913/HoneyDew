@@ -12,7 +12,7 @@
 @protocol BloggerCellDelegate <NSObject>
 
 @optional
-- (void)mapCellTapped;
+- (void)mapCellTappedAtRegion:(MKCoordinateRegion)region;
 
 @end
 
@@ -32,6 +32,7 @@ typedef enum : NSUInteger {
 } BloggerCellSectionType;
 
 @interface BloggerDetailTableViewCell : UITableViewCell <MKMapViewDelegate>
+@property (nonatomic) MKCoordinateRegion currentRegion;
 @property (nonatomic, strong) UIImageView *cellIcon;
 @property (nonatomic, strong) UILabel *mainText;
 @property (nonatomic, strong) UILabel *detailText;
@@ -44,4 +45,5 @@ typedef enum : NSUInteger {
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 - (void)configureMapCellForType:(NSUInteger)type;
 - (void)configureInfoCellForType:(NSUInteger)type;
+- (void)mapTapped;
 @end

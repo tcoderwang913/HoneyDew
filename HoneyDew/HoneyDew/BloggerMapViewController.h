@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface BloggerMapViewController : UIViewController
+@property (nonatomic) MKCoordinateRegion currentRegion;
 
+- (id)initWithRegion:(MKCoordinateRegion)region;
 @end

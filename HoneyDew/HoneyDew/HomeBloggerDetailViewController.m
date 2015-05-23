@@ -23,6 +23,7 @@ const static CGFloat kBorderTopMargin = 20;
 @property (nonatomic, strong) UILabel *rstrtSummaryLabel;
 @property (nonatomic, strong) UILabel *openHourLabel;
 @property (nonatomic, strong) UITableView *detailTableView;
+@property (nonatomic, strong) CLLocation *currentLocation;
 @end
 
 @implementation HomeBloggerDetailViewController
@@ -51,15 +52,38 @@ const static CGFloat kBorderTopMargin = 20;
   
   self.locationManager = [[CLLocationManager alloc]init];
   self.locationManager.delegate = self;
+  self.locationManager.distanceFilter = kCLDistanceFilterNone;
+  self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+  [self.locationManager startUpdatingLocation];
+  
+  if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    [self.locationManager requestWhenInUseAuthorization];
+  
+  [self.locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
 }
 
+#pragma mark - location delegate
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+  NSLog(@"didFailWithError: %@", error);
+  UIAlertView *errorAlert = [[UIAlertView alloc]
+                             initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+  [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+  self.currentLocation = newLocation;
+}
+
 #pragma mark - Blogger cell delegate
-- (void)mapCellTapped {
-  BloggerMapViewController *mapViewController = [[BloggerMapViewController alloc] init];
+- (void)mapCellTappedAtRegion:(MKCoordinateRegion)region{
+  BloggerMapViewController *mapViewController = [[BloggerMapViewController alloc] initWithRegion:region];
   mapViewController.view.frame = self.view.bounds;
   [self.navigationController pushViewController:mapViewController animated:YES];
 }
@@ -91,19 +115,29 @@ const static CGFloat kBorderTopMargin = 20;
   switch (row) {
     case BloggerDetailCellTypeMapView:
     {
-      if ([self respondsToSelector:@selector(mapCellTapped)]) {
-        [self mapCellTapped];
-      }
+      NSIndexPath *indexPath = [NSIndexPath indexPathForRow:BloggerDetailCellTypeMapView inSection:BloggerCellSectionTypeMap];
+      BloggerDetailTableViewCell *detailCell = (BloggerDetailTableViewCell *)[self.detailTableView cellForRowAtIndexPath:indexPath];
+      [detailCell mapTapped];
     }
       break;
     case BloggerDetailCellTypeMapDirection:
     {
-      
+      // this uses an address for the destination.  can use lat/long, too with %f,%f format
+      MKPlacemark* place = [[MKPlacemark alloc] initWithCoordinate: self.currentLocation.coordinate addressDictionary: nil];
+      MKMapItem* destination = [[MKMapItem alloc] initWithPlacemark: place];
+      destination.name = @"1133 Lawrence Expy, Sunnyvale, CA 94089";
+      NSArray* items = [[NSArray alloc] initWithObjects: destination, nil];
+      NSDictionary* options = [[NSDictionary alloc] initWithObjectsAndKeys:
+                               MKLaunchOptionsDirectionsModeDriving,
+                               MKLaunchOptionsDirectionsModeKey, nil];
+      [MKMapItem openMapsWithItems: items launchOptions: options];
     }
       break;
     case BloggerDetailCellTypeMapText:
     {
-      
+      NSIndexPath *indexPath = [NSIndexPath indexPathForRow:BloggerDetailCellTypeMapView inSection:BloggerCellSectionTypeMap];
+      BloggerDetailTableViewCell *detailCell = (BloggerDetailTableViewCell *)[self.detailTableView cellForRowAtIndexPath:indexPath];
+      [detailCell mapTapped];
     }
       break;
     default:

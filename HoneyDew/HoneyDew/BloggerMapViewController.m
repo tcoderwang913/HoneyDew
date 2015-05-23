@@ -7,7 +7,6 @@
 //
 
 #import "BloggerMapViewController.h"
-#import <MapKit/MapKit.h>
 
 @interface BloggerMapViewController ()
 @property (nonatomic) MKMapView *mapView;
@@ -15,10 +14,21 @@
 
 @implementation BloggerMapViewController
 
+- (id)initWithRegion:(MKCoordinateRegion)region {
+  if (self = [super init]) {
+    _currentRegion = region;
+  }
+  return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
   _mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
+  [_mapView setRegion:self.currentRegion];
+  MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+  [annotation setCoordinate:self.currentRegion.center];
+  [_mapView addAnnotation:annotation];
   [self.view addSubview:_mapView];
 }
 

@@ -62,6 +62,7 @@ const static CGFloat kCellTextWidth = 250;
             region.center = [(CLCircularRegion*)placemark.region center];
             region.span = MKCoordinateSpanMake(0.02, 0.02);
             [_mapView setRegion:region animated:NO];
+            self.currentRegion = region;
             
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
             [annotation setCoordinate:region.center];
@@ -264,8 +265,12 @@ const static CGFloat kCellTextWidth = 250;
 
 }
 
+- (void)mapTapped {
+  [self mapTapped:nil];
+}
+
 - (void)mapTapped:(UIGestureRecognizer*)recognizer {
-  [self.delegate mapCellTapped];
+  [self.delegate mapCellTappedAtRegion:self.currentRegion];
 }
 
 #pragma mark - location
