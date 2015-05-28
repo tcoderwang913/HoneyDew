@@ -18,7 +18,7 @@ const static CGFloat kCellTextWidth = 250;
     _cellIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
     _mainText = [[UILabel alloc] initWithFrame:CGRectZero];
     _mainText.textColor = [UIColor blackColor];
-    _mainText.font = [UIFont systemFontOfSize:20];
+    _mainText.font = [UIFont systemFontOfSize:18];
     _detailText = [[UILabel alloc] initWithFrame:CGRectZero];
     _detailText.textColor = [UIColor blackColor];
     _detailText.lineBreakMode = NSLineBreakByTruncatingTail;
@@ -111,8 +111,8 @@ const static CGFloat kCellTextWidth = 250;
       _currentType = BloggerDetailCellTypeMainMenu;
       _cellIcon.image = [UIImage imageNamed:@"menu.png"];
       _mainText.text = @"Menu";
-      _detailText.numberOfLines = 2;
-      _detailText.text = @"Roasted Duck, Beef Chow Fun, Sweet & Sour Pork, Soya Duck, Soya Pig Intestine, Thai Style Chicken Feet, Pork Shank In House Sauce";
+      _detailText.numberOfLines = 1;
+      _detailText.text = @"Roasted Duck, Beef Chow Fun, Sweet & Sour Pork, Soya Duck";
     }
       break;
     case BloggerDetailCellTypeMore:
@@ -160,12 +160,12 @@ const static CGFloat kCellTextWidth = 250;
           break;
         case BloggerDetailCellTypeMapText:
         {
-          ret = 40;
+          ret = 50;
         }
           break;
         case BloggerDetailCellTypeMapDirection:
         {
-          ret = 40;
+          ret = 50;
         }
           break;
         default:
@@ -179,22 +179,22 @@ const static CGFloat kCellTextWidth = 250;
       switch (type) {
         case BloggerDetailCellTypeMainMenu:
         {
-          ret = 60;
+          ret = 50;
         }
           break;
         case BloggerDetailCellTypeMore:
         {
-          ret = 44;
+          ret = 50;
         }
           break;
         case BloggerDetailCellTypePrice:
         {
-          ret = 40;
+          ret = 50;
         }
           break;
         case BloggerDetailCellTypeCall:
         {
-          ret = 40;
+          ret = 50;
         }
         default:
           break;
@@ -219,46 +219,46 @@ const static CGFloat kCellTextWidth = 250;
       break;
     case BloggerDetailCellTypeMapText:
     {
-      _mainText.frame = CGRectMake(kBloggerCellMargin, 5, self.frame.size.width - kBloggerCellMargin - 30, 25);
+      _mainText.frame = CGRectMake(kBloggerCellMargin, 10, self.frame.size.width - kBloggerCellMargin - 40, 30);
     }
       break;
     case BloggerDetailCellTypeMapDirection:
     {
-      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 5, kCellIconSide, kCellIconSide);
-      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 5, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 30, 25);
+      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 10, kCellIconSide, kCellIconSide);
+      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 10, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 40, 30);
     }
       break;
     case BloggerDetailCellTypeMainMenu:
     {
-      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 15, kCellIconSide, kCellIconSide);
-      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 5, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 30, 20);
-      _detailText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 28, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 20, 30);
+      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 10, kCellIconSide, kCellIconSide);
+      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 7, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 40, 20);
+      _detailText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 28, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 40, 15);
     }
       break;
     case BloggerDetailCellTypePrice:
     {
-      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 5, kCellIconSide, kCellIconSide);
-      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 5, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 30, 25);
+      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 10, kCellIconSide, kCellIconSide);
+      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 10, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 40, 30);
     }
       break;
     case BloggerDetailCellTypeMore:
     {
-      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 8, kCellIconSide, kCellIconSide);
-      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 5, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 30, 20);
-      _detailText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 28, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 20, 15);
+      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 10, kCellIconSide, kCellIconSide);
+      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 7, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 40, 20);
+      _detailText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 28, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 40, 15);
     }
       break;
     case BloggerDetailCellTypeCall:
     {
-      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 5, kCellIconSide, kCellIconSide);
-      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 5, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 30, 25);
+      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 10, kCellIconSide, kCellIconSide);
+      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 10, self.frame.size.width - _cellIcon.frame.size.width - kBloggerCellMargin * 2 - 40, 30);
     }
       break;
     default:
     {
-      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 5, kCellIconSide, kCellIconSide);
-      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 2, kCellTextWidth, 25);
-      _detailText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 30, kCellTextWidth, 12);
+      _cellIcon.frame = CGRectMake(kBloggerCellMargin, 10, kCellIconSide, kCellIconSide);
+      _mainText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 7, kCellTextWidth, 20);
+      _detailText.frame = CGRectMake(_cellIcon.frame.size.width + _cellIcon.frame.origin.x + kBloggerCellMargin, 28, kCellTextWidth, 15);
     }
       break;
   }

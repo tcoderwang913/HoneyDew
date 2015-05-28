@@ -223,12 +223,12 @@ const static CGFloat kBorderTopMargin = 20;
   _mainScrollView.backgroundColor = [UIColor colorWithRed:233/255.0 green:233/255.0 blue:233/255.0 alpha:1.0];
   
   _rstrtNameLabel = [[UILabel alloc] init];
-  _rstrtNameLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight"  size:25];
-  _rstrtNameLabel.textColor = [UIColor colorWithRed:0 green:0.2 blue:0.8 alpha:1.0];
+  _rstrtNameLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light"  size:25];
+  _rstrtNameLabel.textColor = [UIColor blackColor];
   _rstrtNameLabel.backgroundColor = [UIColor clearColor];
   _rstrtSummaryLabel = [[UILabel alloc] init];
-  _rstrtSummaryLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight"  size:20];
-  _rstrtSummaryLabel.textColor = [UIColor blackColor];
+  _rstrtSummaryLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light"  size:20];
+  _rstrtSummaryLabel.textColor = [UIColor darkGrayColor];
   _rstrtSummaryLabel.backgroundColor = [UIColor clearColor];
   _ratingReviewBgView = [[UIView alloc] init];
   _ratingReviewBgView.backgroundColor = [UIColor clearColor];
