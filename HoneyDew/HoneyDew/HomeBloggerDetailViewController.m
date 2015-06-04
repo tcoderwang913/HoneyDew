@@ -8,6 +8,7 @@
 
 #import "HomeBloggerDetailViewController.h"
 #import "BloggerDetailTableViewCell.h"
+#import "RsrtDishViewController.h"
 #import "BloggerMapViewController.h"
 
 const static CGFloat kBorderLRMargin = 10;
@@ -154,7 +155,8 @@ const static CGFloat kBorderTopMargin = 20;
       break;
     case BloggerDetailCellTypeMainMenu:
     {
-      
+      RsrtDishViewController *rsrtDishViewController = [[RsrtDishViewController alloc] init];
+      [self.navigationController pushViewController:rsrtDishViewController animated:YES];
     }
       break;
     case BloggerDetailCellTypeMore:
