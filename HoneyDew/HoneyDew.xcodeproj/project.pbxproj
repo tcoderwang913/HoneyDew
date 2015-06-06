@@ -15,7 +15,7 @@
 		575BD66A1ADE3B16001A8695 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 575BD6691ADE3B16001A8695 /* Images.xcassets */; };
 		575BD6791ADE3B16001A8695 /* HoneyDewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD6781ADE3B16001A8695 /* HoneyDewTests.m */; };
 		575BD6921ADE4145001A8695 /* HomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD68D1ADE4145001A8695 /* HomeScreenViewController.m */; };
-		575BD6931ADE4145001A8695 /* InvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD68F1ADE4145001A8695 /* InvitationViewController.m */; };
+		575BD6931ADE4145001A8695 /* PublicEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD68F1ADE4145001A8695 /* PublicEventsViewController.m */; };
 		575BD6941ADE4145001A8695 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BD6911ADE4145001A8695 /* SettingsViewController.m */; };
 		575BD6961ADE496E001A8695 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575BD6951ADE496E001A8695 /* FacebookSDK.framework */; };
 		575BD6981ADE4A5A001A8695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575BD6971ADE4A5A001A8695 /* Main.storyboard */; };
@@ -62,8 +62,8 @@
 		575BD6781ADE3B16001A8695 /* HoneyDewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoneyDewTests.m; sourceTree = "<group>"; };
 		575BD68C1ADE4145001A8695 /* HomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
 		575BD68D1ADE4145001A8695 /* HomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
-		575BD68E1ADE4145001A8695 /* InvitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationViewController.h; sourceTree = "<group>"; };
-		575BD68F1ADE4145001A8695 /* InvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationViewController.m; sourceTree = "<group>"; };
+		575BD68E1ADE4145001A8695 /* PublicEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicEventsViewController.h; sourceTree = "<group>"; };
+		575BD68F1ADE4145001A8695 /* PublicEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicEventsViewController.m; sourceTree = "<group>"; };
 		575BD6901ADE4145001A8695 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		575BD6911ADE4145001A8695 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		575BD6951ADE496E001A8695 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 				B61167F01AFDD86300AAA022 /* BloggerDetailTableViewCell.m */,
 				B6676DFF1AF6F74B002DAE9D /* BloggerCellTableViewCell.h */,
 				B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */,
-				575BD68E1ADE4145001A8695 /* InvitationViewController.h */,
-				575BD68F1ADE4145001A8695 /* InvitationViewController.m */,
+				575BD68E1ADE4145001A8695 /* PublicEventsViewController.h */,
+				575BD68F1ADE4145001A8695 /* PublicEventsViewController.m */,
 				573A01851AFDCB3B00907A38 /* InvitationTableViewCell.h */,
 				573A01861AFDCB3B00907A38 /* InvitationTableViewCell.m */,
 				573A01881AFEAE2100907A38 /* IncomingInvitationDetailViewController.h */,
@@ -337,7 +337,7 @@
 				575BD6941ADE4145001A8695 /* SettingsViewController.m in Sources */,
 				573A018A1AFEAE2100907A38 /* IncomingInvitationDetailViewController.m in Sources */,
 				B6E6581C1AF9D53600333102 /* HomeBloggerDetailViewController.m in Sources */,
-				575BD6931ADE4145001A8695 /* InvitationViewController.m in Sources */,
+				575BD6931ADE4145001A8695 /* PublicEventsViewController.m in Sources */,
 				575BD65F1ADE3B16001A8695 /* main.m in Sources */,
 				B65E44DD1B20105A00C86DD6 /* RsrtDishViewController.m in Sources */,
 			);

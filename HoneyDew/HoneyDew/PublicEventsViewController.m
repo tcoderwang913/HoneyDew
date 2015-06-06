@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Song Wang. All rights reserved.
 //
 
-#import "InvitationViewController.h"
+#import "PublicEventsViewController.h"
 #import "InvitationTableViewCell.h"
 #import "IncomingInvitationDetailViewController.h"
 
@@ -15,14 +15,14 @@ static const CGFloat kHeightOfTableViewCell = 60;
 
 static NSString *cellIdentifier = @"InvitationTableViewCellIdentifier";
 
-@interface InvitationViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface PublicEventsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
 
 @end
 
-@implementation InvitationViewController
+@implementation PublicEventsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,8 +31,8 @@ static NSString *cellIdentifier = @"InvitationTableViewCellIdentifier";
   if (self) {
     UIView *invitationView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     invitationView.backgroundColor = [UIColor whiteColor];
-    self.title = @"Invitations";
-    self.tabBarItem.image = [UIImage imageNamed:@"Invite-25"];
+    self.title = @"View";
+    self.tabBarItem.image = [UIImage imageNamed:@"view"];
     self.view = invitationView;
     [self.view addSubview:self.tableView];
   }

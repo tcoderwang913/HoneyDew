@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "HomeScreenViewController.h"
-#import "InvitationViewController.h"
+#import "PublicEventsViewController.h"
 #import "SettingsViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
@@ -36,11 +36,14 @@
   HomeScreenViewController *homeScreenVC = [[HomeScreenViewController alloc] init];
   UINavigationController *homeScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:homeScreenVC];
   
-  InvitationViewController *invitationVC = [[InvitationViewController alloc]  init];
-  UINavigationController *invitationScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:invitationVC];
+  
+  
+  PublicEventsViewController *publicVC = [[PublicEventsViewController alloc]  init];
+  UINavigationController *publicScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:publicVC];
   
   SettingsViewController *settingVC = [[SettingsViewController alloc] init];
   UINavigationController *settingScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:settingVC];
+  
   
   [[UITabBarItem appearance] setTitleTextAttributes:@{
                                                       NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
@@ -52,7 +55,7 @@
                                                       NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:138/255.0 blue:196/255.0 alpha:1.0],}
                                            forState:UIControlStateSelected];
 
-  self.tabBarController.viewControllers = @[homeScreenNavigationController, invitationScreenNavigationController,settingScreenNavigationController];
+  self.tabBarController.viewControllers = @[homeScreenNavigationController, publicScreenNavigationController,settingScreenNavigationController];
   self.window.rootViewController = self.tabBarController;
   
 
