@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  self.view.backgroundColor = [UIColor whiteColor];
   [self manuallyLayoutSubviews];
 }
 
@@ -57,13 +58,18 @@
   if (cell == nil) {
     cell = [[DishTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailCellIdentifier];
   }
-  // TODO: fill cell content
+  
+  // update cell content -- this should be done in the view
+  cell.dishView.image = [UIImage imageNamed:@"dish.png"];
+  cell.dishPrice.text = @"$10.00";
+  cell.dishLabel.text = @"Boiled Fish Fillet in Hot Sauce";
+  cell.dishDescription.text = @"Boiled Fish Fillet in Hot Sauce , very expansive and spicy";
   return cell;
 }
 
 #pragma mark - tableview delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return 100;
+  return 80;
 }
 
 - (void)manuallyLayoutSubviews {

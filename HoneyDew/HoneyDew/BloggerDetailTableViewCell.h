@@ -28,7 +28,8 @@ typedef enum : NSUInteger {
 
 typedef enum : NSUInteger {
   BloggerCellSectionTypeMap,
-  BloggerCellSectionTypeInfo
+  BloggerCellSectionTypeInfo,
+  BloggerCellSectionImage
 } BloggerCellSectionType;
 
 @interface BloggerDetailTableViewCell : UITableViewCell <MKMapViewDelegate>

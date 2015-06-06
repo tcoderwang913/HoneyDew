@@ -9,7 +9,9 @@
 #import "HomeBloggerDetailViewController.h"
 #import "BloggerDetailTableViewCell.h"
 #import "RsrtDishViewController.h"
+#import "RsrtMoreViewController.h"
 #import "BloggerMapViewController.h"
+#import "RsrtImagesTableViewCell.h"
 
 const static CGFloat kBorderLRMargin = 10;
 const static CGFloat kRatingStarMargin = 5;
@@ -103,12 +105,20 @@ const static CGFloat kBorderTopMargin = 20;
       [self selectInfoSectionRow:indexPath.row + 3];
     }
       break;
+    case BloggerCellSectionImage:
+    {
+      [self selectImageSectionRow:indexPath.row + 7];
+    }
+      break;
     default:
       break;
   }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.section == BloggerCellSectionImage) {
+    return [RsrtImagesTableViewCell heightOfImageCell];
+  }
   return [BloggerDetailTableViewCell heightForCellWithType:indexPath.row atSection:indexPath.section];
 }
 
@@ -150,7 +160,8 @@ const static CGFloat kBorderTopMargin = 20;
   switch (row) {
     case BloggerDetailCellTypeCall:
     {
-      
+      // TODO: need test it on real device
+      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://2135554321"]];
     }
       break;
     case BloggerDetailCellTypeMainMenu:
@@ -161,7 +172,8 @@ const static CGFloat kBorderTopMargin = 20;
       break;
     case BloggerDetailCellTypeMore:
     {
-      
+      RsrtMoreViewController *rsrtMoreViewController = [[RsrtMoreViewController alloc] init];
+      [self.navigationController pushViewController:rsrtMoreViewController animated:YES];
     }
       break;
     case BloggerDetailCellTypePrice:
@@ -174,9 +186,13 @@ const static CGFloat kBorderTopMargin = 20;
   }
 }
 
+- (void)selectImageSectionRow:(NSInteger)row {
+  
+}
+
 #pragma mark - UITableView data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 2;
+  return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -187,6 +203,8 @@ const static CGFloat kBorderTopMargin = 20;
     case BloggerCellSectionTypeInfo:
       return 4;
       break;
+    case BloggerCellSectionImage:
+      return 1;
     default:
       break;
   }
@@ -194,6 +212,17 @@ const static CGFloat kBorderTopMargin = 20;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  if (indexPath.section == BloggerCellSectionImage) {
+    static NSString *imagesCellIdentifier = @"ImagesCellIdentifier";
+    RsrtImagesTableViewCell *cell = (RsrtImagesTableViewCell*)[tableView dequeueReusableCellWithIdentifier:imagesCellIdentifier];
+    if (cell == nil) {
+      cell = [[RsrtImagesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:imagesCellIdentifier];
+    }
+    cell.backgroundColor = [UIColor whiteColor];
+    return cell;
+  }
+  
   static NSString *detailCellIdentifier = @"DetailCellIdentifier";
   BloggerDetailTableViewCell *cell = (BloggerDetailTableViewCell*)[tableView dequeueReusableCellWithIdentifier:detailCellIdentifier];
   if (cell == nil) {
@@ -211,6 +240,7 @@ const static CGFloat kBorderTopMargin = 20;
     {
       [cell configureInfoCellForType:indexPath.row + 3];
     }
+      break;
     default:
       break;
   }

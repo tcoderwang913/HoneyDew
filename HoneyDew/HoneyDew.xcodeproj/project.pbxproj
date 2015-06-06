@@ -26,6 +26,8 @@
 		B61167F11AFDD86300AAA022 /* BloggerDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B61167F01AFDD86300AAA022 /* BloggerDetailTableViewCell.m */; };
 		B65E44DD1B20105A00C86DD6 /* RsrtDishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65E44DC1B20105A00C86DD6 /* RsrtDishViewController.m */; };
 		B65E44E11B2016F100C86DD6 /* DishTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B65E44E01B2016F100C86DD6 /* DishTableViewCell.m */; };
+		B65E44EF1B23517000C86DD6 /* RsrtMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65E44EE1B23517000C86DD6 /* RsrtMoreViewController.m */; };
+		B65E44F21B235ED500C86DD6 /* RsrtImagesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B65E44F11B235ED500C86DD6 /* RsrtImagesTableViewCell.m */; };
 		B6676E011AF6F74B002DAE9D /* BloggerCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */; };
 		B6B1919A1B0EFAB00082DED7 /* BloggerMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B191991B0EFAB00082DED7 /* BloggerMapViewController.m */; };
 		B6DD42AC1B08501D0026C1AB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6DD42AB1B08501D0026C1AB /* MapKit.framework */; };
@@ -77,6 +79,10 @@
 		B65E44DC1B20105A00C86DD6 /* RsrtDishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RsrtDishViewController.m; sourceTree = "<group>"; };
 		B65E44DF1B2016F100C86DD6 /* DishTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DishTableViewCell.h; sourceTree = "<group>"; };
 		B65E44E01B2016F100C86DD6 /* DishTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DishTableViewCell.m; sourceTree = "<group>"; };
+		B65E44ED1B23517000C86DD6 /* RsrtMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RsrtMoreViewController.h; sourceTree = "<group>"; };
+		B65E44EE1B23517000C86DD6 /* RsrtMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RsrtMoreViewController.m; sourceTree = "<group>"; };
+		B65E44F01B235ED500C86DD6 /* RsrtImagesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RsrtImagesTableViewCell.h; sourceTree = "<group>"; };
+		B65E44F11B235ED500C86DD6 /* RsrtImagesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RsrtImagesTableViewCell.m; sourceTree = "<group>"; };
 		B6676DFF1AF6F74B002DAE9D /* BloggerCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerCellTableViewCell.h; sourceTree = "<group>"; };
 		B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerCellTableViewCell.m; sourceTree = "<group>"; };
 		B6B191981B0EFAB00082DED7 /* BloggerMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerMapViewController.h; sourceTree = "<group>"; };
@@ -133,10 +139,14 @@
 				575BD68D1ADE4145001A8695 /* HomeScreenViewController.m */,
 				B6E6581A1AF9D53600333102 /* HomeBloggerDetailViewController.h */,
 				B6E6581B1AF9D53600333102 /* HomeBloggerDetailViewController.m */,
+				B65E44ED1B23517000C86DD6 /* RsrtMoreViewController.h */,
+				B65E44EE1B23517000C86DD6 /* RsrtMoreViewController.m */,
 				B65E44DB1B20105A00C86DD6 /* RsrtDishViewController.h */,
 				B65E44DC1B20105A00C86DD6 /* RsrtDishViewController.m */,
 				B65E44DF1B2016F100C86DD6 /* DishTableViewCell.h */,
 				B65E44E01B2016F100C86DD6 /* DishTableViewCell.m */,
+				B65E44F01B235ED500C86DD6 /* RsrtImagesTableViewCell.h */,
+				B65E44F11B235ED500C86DD6 /* RsrtImagesTableViewCell.m */,
 				B6B191981B0EFAB00082DED7 /* BloggerMapViewController.h */,
 				B6B191991B0EFAB00082DED7 /* BloggerMapViewController.m */,
 				B61167EF1AFDD86300AAA022 /* BloggerDetailTableViewCell.h */,
@@ -313,7 +323,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B65E44EF1B23517000C86DD6 /* RsrtMoreViewController.m in Sources */,
 				575BD6651ADE3B16001A8695 /* ViewController.m in Sources */,
+				B65E44F21B235ED500C86DD6 /* RsrtImagesTableViewCell.m in Sources */,
 				B65E44E11B2016F100C86DD6 /* DishTableViewCell.m in Sources */,
 				B61167F11AFDD86300AAA022 /* BloggerDetailTableViewCell.m in Sources */,
 				575BD6921ADE4145001A8695 /* HomeScreenViewController.m in Sources */,
