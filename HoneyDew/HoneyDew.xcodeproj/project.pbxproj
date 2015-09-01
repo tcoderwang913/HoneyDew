@@ -23,15 +23,40 @@
 		57EFA1DE1AE44A2200809D48 /* Settings-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 57EFA1DB1AE44A2200809D48 /* Settings-26.png */; };
 		57EFA1DF1AE44A2200809D48 /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 57EFA1DC1AE44A2200809D48 /* Home-25.png */; };
 		57EFA1E41AE44F1000809D48 /* RestauranteCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EFA1E31AE44F1000809D48 /* RestauranteCollectionViewController.m */; };
+		B60E694A1B2FF76C009133F9 /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E69491B2FF76C009133F9 /* UIView+Position.m */; };
 		B61167F11AFDD86300AAA022 /* BloggerDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B61167F01AFDD86300AAA022 /* BloggerDetailTableViewCell.m */; };
 		B65E44DD1B20105A00C86DD6 /* RsrtDishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65E44DC1B20105A00C86DD6 /* RsrtDishViewController.m */; };
 		B65E44E11B2016F100C86DD6 /* DishTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B65E44E01B2016F100C86DD6 /* DishTableViewCell.m */; };
 		B65E44EF1B23517000C86DD6 /* RsrtMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65E44EE1B23517000C86DD6 /* RsrtMoreViewController.m */; };
 		B65E44F21B235ED500C86DD6 /* RsrtImagesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B65E44F11B235ED500C86DD6 /* RsrtImagesTableViewCell.m */; };
 		B6676E011AF6F74B002DAE9D /* BloggerCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */; };
+		B66A7A461B36801100AC5977 /* HDEvtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A7A451B36801100AC5977 /* HDEvtViewController.m */; };
+		B66A7A491B36823D00AC5977 /* HDInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A7A481B36823D00AC5977 /* HDInfoViewController.m */; };
+		B66A7A4D1B37E43B00AC5977 /* HDEvtCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A7A4C1B37E43B00AC5977 /* HDEvtCreateViewController.m */; };
+		B66A7A501B3BB67800AC5977 /* HDEvtDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A7A4F1B3BB67800AC5977 /* HDEvtDetailViewController.m */; };
+		B66A7A531B3BC83F00AC5977 /* HDEvtInviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A7A521B3BC83F00AC5977 /* HDEvtInviteFriendViewController.m */; };
+		B66A7A571B3D088900AC5977 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A7A561B3D088900AC5977 /* Event.m */; };
+		B66A7A5A1B3D09D800AC5977 /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A7A591B3D09D800AC5977 /* EventManager.m */; };
+		B66A7AC31B43826500AC5977 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66A7AC21B43826500AC5977 /* FBSDKCoreKit.framework */; };
+		B66A7AC51B43B39C00AC5977 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66A7AC41B43B39C00AC5977 /* FBSDKLoginKit.framework */; };
+		B66A7ACB1B43BA5900AC5977 /* HDRootFBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A7ACA1B43BA5900AC5977 /* HDRootFBLoginViewController.m */; };
 		B6B1919A1B0EFAB00082DED7 /* BloggerMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B191991B0EFAB00082DED7 /* BloggerMapViewController.m */; };
 		B6DD42AC1B08501D0026C1AB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6DD42AB1B08501D0026C1AB /* MapKit.framework */; };
 		B6E6581C1AF9D53600333102 /* HomeBloggerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E6581B1AF9D53600333102 /* HomeBloggerDetailViewController.m */; };
+		B6EB06BF1B86F90A00FBDB35 /* UIColor+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EB06BE1B86F90A00FBDB35 /* UIColor+Utilities.m */; };
+		B6EB06C21B8AA3ED00FBDB35 /* HDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EB06C11B8AA3ED00FBDB35 /* HDTabBarController.m */; };
+		B6EB06C51B8AB90E00FBDB35 /* HDEvtListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EB06C41B8AB90E00FBDB35 /* HDEvtListCell.m */; };
+		B6EB06FB1B8D849100FBDB35 /* HDInfoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EB06FA1B8D849100FBDB35 /* HDInfoListCell.m */; };
+		B6EB06FE1B9029D200FBDB35 /* HDEvtCreateViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EB06FD1B9029D200FBDB35 /* HDEvtCreateViewCell.m */; };
+		B6EB07011B92900C00FBDB35 /* HDEvtCreateViewIsPublicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EB07001B92900C00FBDB35 /* HDEvtCreateViewIsPublicCell.m */; };
+		B6EB07041B93E0BE00FBDB35 /* HDEvtInviteFriendViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EB07031B93E0BE00FBDB35 /* HDEvtInviteFriendViewCell.m */; };
+		B6EBE3251B4500160045C8D1 /* HDRootInputInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EBE3241B4500160045C8D1 /* HDRootInputInfoViewController.m */; };
+		B6EBE3281B4984830045C8D1 /* HDControlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EBE3271B4984830045C8D1 /* HDControlManager.m */; };
+		B6EBE32E1B4BA1790045C8D1 /* FBProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EBE32D1B4BA1790045C8D1 /* FBProfile.m */; };
+		B6EBE3311B4CF7EA0045C8D1 /* ProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EBE3301B4CF7EA0045C8D1 /* ProfileManager.m */; };
+		B6EBE3341B4D019E0045C8D1 /* HDProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EBE3331B4D019E0045C8D1 /* HDProfile.m */; };
+		B6EBE3361B58D4140045C8D1 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBE3351B58D4140045C8D1 /* FBSDKMessengerShareKit.framework */; };
+		B6EBE3381B58D7920045C8D1 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBE3371B58D7920045C8D1 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +98,9 @@
 		57EFA1DC1AE44A2200809D48 /* Home-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-25.png"; sourceTree = "<group>"; };
 		57EFA1E21AE44F1000809D48 /* RestauranteCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestauranteCollectionViewController.h; sourceTree = "<group>"; };
 		57EFA1E31AE44F1000809D48 /* RestauranteCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestauranteCollectionViewController.m; sourceTree = "<group>"; };
+		B60E69461B2FF301009133F9 /* iOSMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSMacro.h; sourceTree = "<group>"; };
+		B60E69481B2FF76C009133F9 /* UIView+Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Position.h"; sourceTree = "<group>"; };
+		B60E69491B2FF76C009133F9 /* UIView+Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Position.m"; sourceTree = "<group>"; };
 		B61167EF1AFDD86300AAA022 /* BloggerDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerDetailTableViewCell.h; sourceTree = "<group>"; };
 		B61167F01AFDD86300AAA022 /* BloggerDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerDetailTableViewCell.m; sourceTree = "<group>"; };
 		B65E44DB1B20105A00C86DD6 /* RsrtDishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RsrtDishViewController.h; sourceTree = "<group>"; };
@@ -85,11 +113,55 @@
 		B65E44F11B235ED500C86DD6 /* RsrtImagesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RsrtImagesTableViewCell.m; sourceTree = "<group>"; };
 		B6676DFF1AF6F74B002DAE9D /* BloggerCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerCellTableViewCell.h; sourceTree = "<group>"; };
 		B6676E001AF6F74B002DAE9D /* BloggerCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerCellTableViewCell.m; sourceTree = "<group>"; };
+		B66A7A441B36801100AC5977 /* HDEvtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDEvtViewController.h; sourceTree = "<group>"; };
+		B66A7A451B36801100AC5977 /* HDEvtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDEvtViewController.m; sourceTree = "<group>"; };
+		B66A7A471B36823D00AC5977 /* HDInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDInfoViewController.h; sourceTree = "<group>"; };
+		B66A7A481B36823D00AC5977 /* HDInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDInfoViewController.m; sourceTree = "<group>"; };
+		B66A7A4B1B37E43B00AC5977 /* HDEvtCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDEvtCreateViewController.h; sourceTree = "<group>"; };
+		B66A7A4C1B37E43B00AC5977 /* HDEvtCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDEvtCreateViewController.m; sourceTree = "<group>"; };
+		B66A7A4E1B3BB67800AC5977 /* HDEvtDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDEvtDetailViewController.h; sourceTree = "<group>"; };
+		B66A7A4F1B3BB67800AC5977 /* HDEvtDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDEvtDetailViewController.m; sourceTree = "<group>"; };
+		B66A7A511B3BC83F00AC5977 /* HDEvtInviteFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDEvtInviteFriendViewController.h; sourceTree = "<group>"; };
+		B66A7A521B3BC83F00AC5977 /* HDEvtInviteFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDEvtInviteFriendViewController.m; sourceTree = "<group>"; };
+		B66A7A551B3D088900AC5977 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		B66A7A561B3D088900AC5977 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		B66A7A581B3D09D800AC5977 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
+		B66A7A591B3D09D800AC5977 /* EventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManager.m; sourceTree = "<group>"; };
+		B66A7AC21B43826500AC5977 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B66A7AC41B43B39C00AC5977 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B66A7AC91B43BA5900AC5977 /* HDRootFBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDRootFBLoginViewController.h; sourceTree = "<group>"; };
+		B66A7ACA1B43BA5900AC5977 /* HDRootFBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDRootFBLoginViewController.m; sourceTree = "<group>"; };
 		B6B191981B0EFAB00082DED7 /* BloggerMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerMapViewController.h; sourceTree = "<group>"; };
 		B6B191991B0EFAB00082DED7 /* BloggerMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerMapViewController.m; sourceTree = "<group>"; };
 		B6DD42AB1B08501D0026C1AB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B6E6581A1AF9D53600333102 /* HomeBloggerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeBloggerDetailViewController.h; sourceTree = "<group>"; };
 		B6E6581B1AF9D53600333102 /* HomeBloggerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeBloggerDetailViewController.m; sourceTree = "<group>"; };
+		B6EB06BD1B86F90A00FBDB35 /* UIColor+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utilities.h"; sourceTree = "<group>"; };
+		B6EB06BE1B86F90A00FBDB35 /* UIColor+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utilities.m"; sourceTree = "<group>"; };
+		B6EB06C01B8AA3ED00FBDB35 /* HDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDTabBarController.h; sourceTree = "<group>"; };
+		B6EB06C11B8AA3ED00FBDB35 /* HDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDTabBarController.m; sourceTree = "<group>"; };
+		B6EB06C31B8AB90E00FBDB35 /* HDEvtListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDEvtListCell.h; sourceTree = "<group>"; };
+		B6EB06C41B8AB90E00FBDB35 /* HDEvtListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDEvtListCell.m; sourceTree = "<group>"; };
+		B6EB06F91B8D849100FBDB35 /* HDInfoListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDInfoListCell.h; sourceTree = "<group>"; };
+		B6EB06FA1B8D849100FBDB35 /* HDInfoListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDInfoListCell.m; sourceTree = "<group>"; };
+		B6EB06FC1B9029D200FBDB35 /* HDEvtCreateViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDEvtCreateViewCell.h; sourceTree = "<group>"; };
+		B6EB06FD1B9029D200FBDB35 /* HDEvtCreateViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDEvtCreateViewCell.m; sourceTree = "<group>"; };
+		B6EB06FF1B92900C00FBDB35 /* HDEvtCreateViewIsPublicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDEvtCreateViewIsPublicCell.h; sourceTree = "<group>"; };
+		B6EB07001B92900C00FBDB35 /* HDEvtCreateViewIsPublicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDEvtCreateViewIsPublicCell.m; sourceTree = "<group>"; };
+		B6EB07021B93E0BE00FBDB35 /* HDEvtInviteFriendViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDEvtInviteFriendViewCell.h; sourceTree = "<group>"; };
+		B6EB07031B93E0BE00FBDB35 /* HDEvtInviteFriendViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDEvtInviteFriendViewCell.m; sourceTree = "<group>"; };
+		B6EBE3231B4500160045C8D1 /* HDRootInputInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDRootInputInfoViewController.h; sourceTree = "<group>"; };
+		B6EBE3241B4500160045C8D1 /* HDRootInputInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDRootInputInfoViewController.m; sourceTree = "<group>"; };
+		B6EBE3261B4984830045C8D1 /* HDControlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDControlManager.h; sourceTree = "<group>"; };
+		B6EBE3271B4984830045C8D1 /* HDControlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDControlManager.m; sourceTree = "<group>"; };
+		B6EBE32C1B4BA1790045C8D1 /* FBProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBProfile.h; sourceTree = "<group>"; };
+		B6EBE32D1B4BA1790045C8D1 /* FBProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBProfile.m; sourceTree = "<group>"; };
+		B6EBE32F1B4CF7EA0045C8D1 /* ProfileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileManager.h; sourceTree = "<group>"; };
+		B6EBE3301B4CF7EA0045C8D1 /* ProfileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileManager.m; sourceTree = "<group>"; };
+		B6EBE3321B4D019E0045C8D1 /* HDProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDProfile.h; sourceTree = "<group>"; };
+		B6EBE3331B4D019E0045C8D1 /* HDProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDProfile.m; sourceTree = "<group>"; };
+		B6EBE3351B58D4140045C8D1 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		B6EBE3371B58D7920045C8D1 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		D8371B4A75A828D7B52BEC62 /* libPods-HoneyDew.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HoneyDew.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6DD42AC1B08501D0026C1AB /* MapKit.framework in Frameworks */,
+				B66A7AC31B43826500AC5977 /* FBSDKCoreKit.framework in Frameworks */,
+				B6EBE3381B58D7920045C8D1 /* FBSDKShareKit.framework in Frameworks */,
+				B6EBE3361B58D4140045C8D1 /* FBSDKMessengerShareKit.framework in Frameworks */,
+				B66A7AC51B43B39C00AC5977 /* FBSDKLoginKit.framework in Frameworks */,
 				575BD6961ADE496E001A8695 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +211,12 @@
 		575BD65B1ADE3B16001A8695 /* HoneyDew */ = {
 			isa = PBXGroup;
 			children = (
+				B66A7A541B3CE77D00AC5977 /* Models */,
+				B66A7A4A1B37A1EC00AC5977 /* Others */,
+				B60E694D1B31487D009133F9 /* ViewControllers */,
+				B60E69471B2FF440009133F9 /* Categories */,
+				B60E69451B2FEECB009133F9 /* Resource */,
+				B60E69441B2FEEB8009133F9 /* Util */,
 				575BD68C1ADE4145001A8695 /* HomeScreenViewController.h */,
 				575BD68D1ADE4145001A8695 /* HomeScreenViewController.m */,
 				B6E6581A1AF9D53600333102 /* HomeBloggerDetailViewController.h */,
@@ -163,8 +245,6 @@
 				575BD6911ADE4145001A8695 /* SettingsViewController.m */,
 				57EFA1E21AE44F1000809D48 /* RestauranteCollectionViewController.h */,
 				57EFA1E31AE44F1000809D48 /* RestauranteCollectionViewController.m */,
-				575BD6601ADE3B16001A8695 /* AppDelegate.h */,
-				575BD6611ADE3B16001A8695 /* AppDelegate.m */,
 				575BD6631ADE3B16001A8695 /* ViewController.h */,
 				575BD6641ADE3B16001A8695 /* ViewController.m */,
 				575BD6971ADE4A5A001A8695 /* Main.storyboard */,
@@ -212,9 +292,100 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B60E69441B2FEEB8009133F9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B60E69461B2FF301009133F9 /* iOSMacro.h */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		B60E69451B2FEECB009133F9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		B60E69471B2FF440009133F9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B60E69481B2FF76C009133F9 /* UIView+Position.h */,
+				B60E69491B2FF76C009133F9 /* UIView+Position.m */,
+				B6EB06BD1B86F90A00FBDB35 /* UIColor+Utilities.h */,
+				B6EB06BE1B86F90A00FBDB35 /* UIColor+Utilities.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		B60E694D1B31487D009133F9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B66A7A441B36801100AC5977 /* HDEvtViewController.h */,
+				B66A7A451B36801100AC5977 /* HDEvtViewController.m */,
+				B66A7A4B1B37E43B00AC5977 /* HDEvtCreateViewController.h */,
+				B66A7A4C1B37E43B00AC5977 /* HDEvtCreateViewController.m */,
+				B66A7A511B3BC83F00AC5977 /* HDEvtInviteFriendViewController.h */,
+				B66A7A521B3BC83F00AC5977 /* HDEvtInviteFriendViewController.m */,
+				B66A7A471B36823D00AC5977 /* HDInfoViewController.h */,
+				B66A7A481B36823D00AC5977 /* HDInfoViewController.m */,
+				B66A7A4E1B3BB67800AC5977 /* HDEvtDetailViewController.h */,
+				B66A7A4F1B3BB67800AC5977 /* HDEvtDetailViewController.m */,
+				B66A7AC91B43BA5900AC5977 /* HDRootFBLoginViewController.h */,
+				B66A7ACA1B43BA5900AC5977 /* HDRootFBLoginViewController.m */,
+				B6EBE3231B4500160045C8D1 /* HDRootInputInfoViewController.h */,
+				B6EBE3241B4500160045C8D1 /* HDRootInputInfoViewController.m */,
+				B6EB06C01B8AA3ED00FBDB35 /* HDTabBarController.h */,
+				B6EB06C11B8AA3ED00FBDB35 /* HDTabBarController.m */,
+				B6EB06C31B8AB90E00FBDB35 /* HDEvtListCell.h */,
+				B6EB06C41B8AB90E00FBDB35 /* HDEvtListCell.m */,
+				B6EB06F91B8D849100FBDB35 /* HDInfoListCell.h */,
+				B6EB06FA1B8D849100FBDB35 /* HDInfoListCell.m */,
+				B6EB06FC1B9029D200FBDB35 /* HDEvtCreateViewCell.h */,
+				B6EB06FD1B9029D200FBDB35 /* HDEvtCreateViewCell.m */,
+				B6EB06FF1B92900C00FBDB35 /* HDEvtCreateViewIsPublicCell.h */,
+				B6EB07001B92900C00FBDB35 /* HDEvtCreateViewIsPublicCell.m */,
+				B6EB07021B93E0BE00FBDB35 /* HDEvtInviteFriendViewCell.h */,
+				B6EB07031B93E0BE00FBDB35 /* HDEvtInviteFriendViewCell.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B66A7A4A1B37A1EC00AC5977 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				575BD6601ADE3B16001A8695 /* AppDelegate.h */,
+				575BD6611ADE3B16001A8695 /* AppDelegate.m */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		B66A7A541B3CE77D00AC5977 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B66A7A551B3D088900AC5977 /* Event.h */,
+				B66A7A561B3D088900AC5977 /* Event.m */,
+				B66A7A581B3D09D800AC5977 /* EventManager.h */,
+				B66A7A591B3D09D800AC5977 /* EventManager.m */,
+				B6EBE3261B4984830045C8D1 /* HDControlManager.h */,
+				B6EBE3271B4984830045C8D1 /* HDControlManager.m */,
+				B6EBE32C1B4BA1790045C8D1 /* FBProfile.h */,
+				B6EBE32D1B4BA1790045C8D1 /* FBProfile.m */,
+				B6EBE3321B4D019E0045C8D1 /* HDProfile.h */,
+				B6EBE3331B4D019E0045C8D1 /* HDProfile.m */,
+				B6EBE32F1B4CF7EA0045C8D1 /* ProfileManager.h */,
+				B6EBE3301B4CF7EA0045C8D1 /* ProfileManager.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		C4F74602DFB6665E4D1E49DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6EBE3371B58D7920045C8D1 /* FBSDKShareKit.framework */,
+				B6EBE3351B58D4140045C8D1 /* FBSDKMessengerShareKit.framework */,
+				B66A7AC41B43B39C00AC5977 /* FBSDKLoginKit.framework */,
+				B66A7AC21B43826500AC5977 /* FBSDKCoreKit.framework */,
 				B6DD42AB1B08501D0026C1AB /* MapKit.framework */,
 				D8371B4A75A828D7B52BEC62 /* libPods-HoneyDew.a */,
 			);
@@ -323,23 +494,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66A7A461B36801100AC5977 /* HDEvtViewController.m in Sources */,
 				B65E44EF1B23517000C86DD6 /* RsrtMoreViewController.m in Sources */,
 				575BD6651ADE3B16001A8695 /* ViewController.m in Sources */,
 				B65E44F21B235ED500C86DD6 /* RsrtImagesTableViewCell.m in Sources */,
 				B65E44E11B2016F100C86DD6 /* DishTableViewCell.m in Sources */,
 				B61167F11AFDD86300AAA022 /* BloggerDetailTableViewCell.m in Sources */,
 				575BD6921ADE4145001A8695 /* HomeScreenViewController.m in Sources */,
+				B6EBE3341B4D019E0045C8D1 /* HDProfile.m in Sources */,
 				B6676E011AF6F74B002DAE9D /* BloggerCellTableViewCell.m in Sources */,
+				B6EB07041B93E0BE00FBDB35 /* HDEvtInviteFriendViewCell.m in Sources */,
 				575BD6621ADE3B16001A8695 /* AppDelegate.m in Sources */,
 				573A01871AFDCB3B00907A38 /* InvitationTableViewCell.m in Sources */,
+				B60E694A1B2FF76C009133F9 /* UIView+Position.m in Sources */,
+				B6EBE3281B4984830045C8D1 /* HDControlManager.m in Sources */,
 				57EFA1E41AE44F1000809D48 /* RestauranteCollectionViewController.m in Sources */,
+				B6EB06FE1B9029D200FBDB35 /* HDEvtCreateViewCell.m in Sources */,
+				B6EBE3311B4CF7EA0045C8D1 /* ProfileManager.m in Sources */,
+				B66A7A571B3D088900AC5977 /* Event.m in Sources */,
+				B66A7A491B36823D00AC5977 /* HDInfoViewController.m in Sources */,
+				B6EB06FB1B8D849100FBDB35 /* HDInfoListCell.m in Sources */,
 				B6B1919A1B0EFAB00082DED7 /* BloggerMapViewController.m in Sources */,
+				B6EB06BF1B86F90A00FBDB35 /* UIColor+Utilities.m in Sources */,
 				575BD6941ADE4145001A8695 /* SettingsViewController.m in Sources */,
+				B6EB06C21B8AA3ED00FBDB35 /* HDTabBarController.m in Sources */,
+				B66A7A4D1B37E43B00AC5977 /* HDEvtCreateViewController.m in Sources */,
 				573A018A1AFEAE2100907A38 /* IncomingInvitationDetailViewController.m in Sources */,
 				B6E6581C1AF9D53600333102 /* HomeBloggerDetailViewController.m in Sources */,
+				B6EBE32E1B4BA1790045C8D1 /* FBProfile.m in Sources */,
+				B66A7A5A1B3D09D800AC5977 /* EventManager.m in Sources */,
+				B6EBE3251B4500160045C8D1 /* HDRootInputInfoViewController.m in Sources */,
 				575BD6931ADE4145001A8695 /* PublicEventsViewController.m in Sources */,
+				B6EB07011B92900C00FBDB35 /* HDEvtCreateViewIsPublicCell.m in Sources */,
+				B66A7A531B3BC83F00AC5977 /* HDEvtInviteFriendViewController.m in Sources */,
+				B66A7ACB1B43BA5900AC5977 /* HDRootFBLoginViewController.m in Sources */,
 				575BD65F1ADE3B16001A8695 /* main.m in Sources */,
+				B6EB06C51B8AB90E00FBDB35 /* HDEvtListCell.m in Sources */,
 				B65E44DD1B20105A00C86DD6 /* RsrtDishViewController.m in Sources */,
+				B66A7A501B3BB67800AC5977 /* HDEvtDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,15 +639,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/sowang/Documents/FacebookSDK,
 					"$(PROJECT_DIR)/HoneyDew",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HoneyDew/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HoneyDew/HoneyDew-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -464,15 +660,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/sowang/Documents/FacebookSDK,
 					"$(PROJECT_DIR)/HoneyDew",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HoneyDew/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HoneyDew/HoneyDew-Bridging-Header.h";
 			};
 			name = Release;
 		};

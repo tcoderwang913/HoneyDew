@@ -9,11 +9,18 @@
 //FB login code from :http://www.appcoda.com/ios-programming-facebook-login-sdk/
 
 #import "AppDelegate.h"
+#import "HDTabBarController.h"
 #import "ViewController.h"
+#import "ProfileManager.h"
 #import "HomeScreenViewController.h"
 #import "PublicEventsViewController.h"
 #import "SettingsViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "HDEvtViewController.h"
+#import "HDInfoViewController.h"
+#import "HDRootFBLoginViewController.h"
+#import "HDControlManager.h"
 
 @interface AppDelegate ()
 
@@ -29,44 +36,69 @@
   
 //  return YES;
   
-  ViewController *vc = [[ViewController alloc ] initWithNibName:nil bundle:nil];
-  self.window.rootViewController = vc;
-    self.tabBarController = [[UITabBarController alloc]  init];
+//  ViewController *vc = [[ViewController alloc ] initWithNibName:nil bundle:nil];
+//  self.window.rootViewController = vc;
+//  
+//  HomeScreenViewController *homeScreenVC = [[HomeScreenViewController alloc] init];
+//  UINavigationController *homeScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:homeScreenVC];
+//  
+//  
+//  
+//  PublicEventsViewController *publicVC = [[PublicEventsViewController alloc]  init];
+//  UINavigationController *publicScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:publicVC];
+//  
+//  SettingsViewController *settingVC = [[SettingsViewController alloc] init];
+//  UINavigationController *settingScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:settingVC];
+//  
+//  
+//  [[UITabBarItem appearance] setTitleTextAttributes:@{
+//                                                      NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
+//                                                      NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:48/255.0 blue:92/255.0 alpha:1.0],}
+//                                           forState:UIControlStateNormal];
+//
+//  [[UITabBarItem appearance] setTitleTextAttributes:@{
+//                                                      NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
+//                                                      NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:138/255.0 blue:196/255.0 alpha:1.0],}
+//                                           forState:UIControlStateSelected];
+//
+//  self.tabBarController.viewControllers = @[homeScreenNavigationController, publicScreenNavigationController,settingScreenNavigationController];
+//  self.window.rootViewController = self.tabBarController;
 
-  HomeScreenViewController *homeScreenVC = [[HomeScreenViewController alloc] init];
-  UINavigationController *homeScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:homeScreenVC];
+  [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+  [HDControlManager sharedManager];
   
-  
-  
-  PublicEventsViewController *publicVC = [[PublicEventsViewController alloc]  init];
-  UINavigationController *publicScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:publicVC];
-  
-  SettingsViewController *settingVC = [[SettingsViewController alloc] init];
-  UINavigationController *settingScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:settingVC];
-  
-  
-  [[UITabBarItem appearance] setTitleTextAttributes:@{
-                                                      NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
-                                                      NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:48/255.0 blue:92/255.0 alpha:1.0],}
-                                           forState:UIControlStateNormal];
+  // get user profile
+  NSData *userProfileData = (NSData *)[[NSUserDefaults standardUserDefaults] objectForKey:@"userProfile"];
+  if (userProfileData) {
+    [[ProfileManager sharedManager] setAppProfile:[NSKeyedUnarchiver unarchiveObjectWithData:userProfileData]];
+  }
 
-  [[UITabBarItem appearance] setTitleTextAttributes:@{
-                                                      NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
-                                                      NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:138/255.0 blue:196/255.0 alpha:1.0],}
-                                           forState:UIControlStateSelected];
-
-  self.tabBarController.viewControllers = @[homeScreenNavigationController, publicScreenNavigationController,settingScreenNavigationController];
-  self.window.rootViewController = self.tabBarController;
+  // create sub-tab navigation controller
+  HDEvtViewController *hdEvtViewController = [[HDEvtViewController alloc] init];
+  UINavigationController *hdEvtNavigationController = [[UINavigationController alloc] initWithRootViewController:hdEvtViewController];
+  hdEvtNavigationController.title = @"Events";
+  hdEvtNavigationController.tabBarItem.image = [UIImage imageNamed:@"events.png"];
+  HDInfoViewController *hdInfoViewController = [[HDInfoViewController alloc] init];
+  UINavigationController *hdInfoNavigationController = [[UINavigationController alloc] initWithRootViewController:hdInfoViewController];
+  hdInfoNavigationController.title = @"Info";
+  hdInfoNavigationController.tabBarItem.image = [UIImage imageNamed:@"info.png"];
   
+  self.tabBarController = [[HDTabBarController alloc] init];
+  self.tabBarController.viewControllers = @[hdEvtNavigationController, hdInfoNavigationController];
+  
+  // test facebook
+  HDRootFBLoginViewController *hdRootFBLoginViewController = [[HDRootFBLoginViewController alloc] init];
+  self.window.rootViewController = hdRootFBLoginViewController;
 
   return YES;
   
 }
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-  
-  return [FBAppCall handleOpenURL:url
-                sourceApplication:sourceApplication];
+//  
+//  return [FBAppCall handleOpenURL:url
+//                sourceApplication:sourceApplication];
+  return [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -85,7 +117,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
   // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-
+  [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
