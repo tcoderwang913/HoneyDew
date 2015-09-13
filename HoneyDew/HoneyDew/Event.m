@@ -25,4 +25,8 @@
   return self;
 }
 
++ (NSInteger)numberOfEventProperties {
+  return 5;
+}
+
 @end

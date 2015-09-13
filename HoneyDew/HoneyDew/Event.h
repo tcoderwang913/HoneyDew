@@ -21,5 +21,5 @@
              andDateTime:(NSDate*)dateTime
             andPartySize:(NSInteger)size
         andIsPublicEvent:(BOOL)public;
-
++ (NSInteger)numberOfEventProperties;
 @end

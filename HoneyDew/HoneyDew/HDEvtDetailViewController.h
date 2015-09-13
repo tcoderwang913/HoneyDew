@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 
-@interface HDEvtDetailViewController : UIViewController
+@interface HDEvtDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 - (id)initWithEvent:(Event*)event;
 

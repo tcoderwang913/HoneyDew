@@ -54,7 +54,7 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString *eventCellIdentifier = @"EventCellIdentifier";
+  static NSString *eventCellIdentifier = @"InfoCellIdentifier";
   HDInfoListCell *cell = (HDInfoListCell*)[tableView dequeueReusableCellWithIdentifier:eventCellIdentifier];
   if (!cell) {
     cell = [[HDInfoListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:eventCellIdentifier];
