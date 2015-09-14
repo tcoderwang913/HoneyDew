@@ -25,6 +25,7 @@
 		57EFA1E41AE44F1000809D48 /* RestauranteCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EFA1E31AE44F1000809D48 /* RestauranteCollectionViewController.m */; };
 		B60E694A1B2FF76C009133F9 /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = B60E69491B2FF76C009133F9 /* UIView+Position.m */; };
 		B61167F11AFDD86300AAA022 /* BloggerDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B61167F01AFDD86300AAA022 /* BloggerDetailTableViewCell.m */; };
+		B633EBD41BA6403A00D4D5F5 /* HDInfoKeyboardAssistView.m in Sources */ = {isa = PBXBuildFile; fileRef = B633EBD31BA6403A00D4D5F5 /* HDInfoKeyboardAssistView.m */; };
 		B65E44DD1B20105A00C86DD6 /* RsrtDishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65E44DC1B20105A00C86DD6 /* RsrtDishViewController.m */; };
 		B65E44E11B2016F100C86DD6 /* DishTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B65E44E01B2016F100C86DD6 /* DishTableViewCell.m */; };
 		B65E44EF1B23517000C86DD6 /* RsrtMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65E44EE1B23517000C86DD6 /* RsrtMoreViewController.m */; };
@@ -103,6 +104,8 @@
 		B60E69491B2FF76C009133F9 /* UIView+Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Position.m"; sourceTree = "<group>"; };
 		B61167EF1AFDD86300AAA022 /* BloggerDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerDetailTableViewCell.h; sourceTree = "<group>"; };
 		B61167F01AFDD86300AAA022 /* BloggerDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerDetailTableViewCell.m; sourceTree = "<group>"; };
+		B633EBD21BA6403A00D4D5F5 /* HDInfoKeyboardAssistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDInfoKeyboardAssistView.h; sourceTree = "<group>"; };
+		B633EBD31BA6403A00D4D5F5 /* HDInfoKeyboardAssistView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDInfoKeyboardAssistView.m; sourceTree = "<group>"; };
 		B65E44DB1B20105A00C86DD6 /* RsrtDishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RsrtDishViewController.h; sourceTree = "<group>"; };
 		B65E44DC1B20105A00C86DD6 /* RsrtDishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RsrtDishViewController.m; sourceTree = "<group>"; };
 		B65E44DF1B2016F100C86DD6 /* DishTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DishTableViewCell.h; sourceTree = "<group>"; };
@@ -341,6 +344,8 @@
 				B6EB06C41B8AB90E00FBDB35 /* HDEvtListCell.m */,
 				B6EB06F91B8D849100FBDB35 /* HDInfoListCell.h */,
 				B6EB06FA1B8D849100FBDB35 /* HDInfoListCell.m */,
+				B633EBD21BA6403A00D4D5F5 /* HDInfoKeyboardAssistView.h */,
+				B633EBD31BA6403A00D4D5F5 /* HDInfoKeyboardAssistView.m */,
 				B6EB06FC1B9029D200FBDB35 /* HDEvtCreateViewCell.h */,
 				B6EB06FD1B9029D200FBDB35 /* HDEvtCreateViewCell.m */,
 				B6EB06FF1B92900C00FBDB35 /* HDEvtCreateViewIsPublicCell.h */,
@@ -500,6 +505,7 @@
 				B65E44F21B235ED500C86DD6 /* RsrtImagesTableViewCell.m in Sources */,
 				B65E44E11B2016F100C86DD6 /* DishTableViewCell.m in Sources */,
 				B61167F11AFDD86300AAA022 /* BloggerDetailTableViewCell.m in Sources */,
+				B633EBD41BA6403A00D4D5F5 /* HDInfoKeyboardAssistView.m in Sources */,
 				575BD6921ADE4145001A8695 /* HomeScreenViewController.m in Sources */,
 				B6EBE3341B4D019E0045C8D1 /* HDProfile.m in Sources */,
 				B6676E011AF6F74B002DAE9D /* BloggerCellTableViewCell.m in Sources */,

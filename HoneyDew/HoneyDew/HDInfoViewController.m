@@ -15,10 +15,11 @@
 #import "UIColor+Utilities.h"
 #import "iOSMacro.h"
 #import "UIView+Position.h"
+#import "HDInfoKeyboardAssistView.h"
 
 #define FBButtonTag 100
 
-@interface HDInfoViewController ()
+@interface HDInfoViewController () <KeyboardAssistDelegate>
 @property (nonatomic) UITableView *infoTableView;
 @property (nonatomic) NSMutableArray *dataModel;
 @end
@@ -36,11 +37,33 @@
   [super viewWillAppear:animated];
   [self loadUserInfo];
   [self manuallyLayoutSubviews];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view.
+}
+
+#pragma mark - keyboard notifications
+
+- (void)keyboardWillShow:(NSNotification*)notification {
+  CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+  
+  UIEdgeInsets contentInsets = UIEdgeInsetsMake(self.infoTableView.contentInset.top, 0.0, keyboardSize.height + kToolbarAssistViewHeight, 0.0);
+  self.infoTableView.contentInset = contentInsets;
+  self.infoTableView.scrollIndicatorInsets = contentInsets;
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+  UIEdgeInsets tableViewInsets = UIEdgeInsetsMake(self.infoTableView.contentInset.top, 0, 0, 0);
+  self.infoTableView.contentInset = tableViewInsets;
+  self.infoTableView.scrollIndicatorInsets = tableViewInsets;
 }
 
 #pragma mark - Table view datasource
@@ -58,13 +81,15 @@
   HDInfoListCell *cell = (HDInfoListCell*)[tableView dequeueReusableCellWithIdentifier:eventCellIdentifier];
   if (!cell) {
     cell = [[HDInfoListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:eventCellIdentifier];
+    HDInfoKeyboardAssistView *assistView = [[HDInfoKeyboardAssistView alloc] initWithFrame:CGRectMake(0, 0, self.view.frameWidth, kToolbarAssistViewHeight)];
+    assistView.delegate = self;
+    cell.cellTF.inputAccessoryView = assistView;
   }
 
   NSDictionary *sectionData = [self.dataModel objectAtIndex:indexPath.section];
   NSString *cellString = [[sectionData allKeys] objectAtIndex:indexPath.row];
   cell.cellLabel.text = cellString;
   cell.cellTF.text = [sectionData objectForKey:cellString];
-  cell.cellTF.userInteractionEnabled = NO;
   return cell;
 }
 
@@ -104,6 +129,62 @@
   } else {
     return nil;
   }
+}
+
+#pragma mark - KeyboardAssistDelegate
+
+- (void)previousBtnAction {
+  NSMutableArray *cells = [NSMutableArray array];
+  for (NSInteger j = [self.infoTableView numberOfSections] - 1; j >= 0; --j) {
+    for (NSInteger i = [self.infoTableView numberOfRowsInSection:j] - 1; i >= 0 ; --i) {
+      HDInfoListCell *cell = (HDInfoListCell*)[self.infoTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:j]];
+      if (cell)
+        [cells addObject:[self.infoTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:j]]];
+    }
+  }
+  BOOL findFirstResponder = NO;
+  for (HDInfoListCell *cell in cells) {
+    if (findFirstResponder) {
+      [cell.cellTF becomeFirstResponder];
+      return;
+    }
+    if ([cell.cellTF isFirstResponder]) {
+      findFirstResponder = YES;
+    }
+  }
+  if (findFirstResponder) {
+    HDInfoListCell *cell = (HDInfoListCell*)[cells objectAtIndex:0];
+    [cell.cellTF becomeFirstResponder];
+  }
+}
+
+- (void)nextBtnAction {
+  NSMutableArray *cells = [NSMutableArray array];
+  for (NSInteger j = 0; j < [self.infoTableView numberOfSections]; ++j) {
+    for (NSInteger i = 0; i < [self.infoTableView numberOfRowsInSection:j]; ++i) {
+      HDInfoListCell *cell = (HDInfoListCell*)[self.infoTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:j]];
+      if (cell)
+        [cells addObject:cell];
+    }
+  }
+  BOOL findFirstResponder = NO;
+  for (HDInfoListCell *cell in cells) {
+    if (findFirstResponder) {
+      [cell.cellTF becomeFirstResponder];
+      return;
+    }
+    if ([cell.cellTF isFirstResponder]) {
+      findFirstResponder = YES;
+    }
+  }
+  if (findFirstResponder) {
+    HDInfoListCell *cell = (HDInfoListCell*)[cells objectAtIndex:0];
+    [cell.cellTF becomeFirstResponder];
+  }
+}
+
+- (void)doneBtnAction {
+  [self.view endEditing:YES];
 }
 
 #pragma mark - Private methods
