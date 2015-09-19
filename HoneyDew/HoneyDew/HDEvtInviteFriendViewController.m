@@ -13,7 +13,7 @@
 @interface HDEvtInviteFriendViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic) UITableView *friendsTableView;
-
+@property (nonatomic) NSMutableSet *selectedFriends;
 @end
 
 @implementation HDEvtInviteFriendViewController
@@ -27,18 +27,17 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  
+  _selectedFriends = [NSMutableSet set];
   [self manuallyLayoutSubviews];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  [_selectedFriends removeAllObjects];
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view datasource
@@ -63,6 +62,11 @@
   }
   
   FBProfile *friend = [[ProfileManager sharedManager].friendsArray objectAtIndex:indexPath.row];
+  if ([self.selectedFriends containsObject:friend]) {
+    [cell updateSelectedState:YES];
+  } else {
+    [cell updateSelectedState:NO];
+  }
   cell.userName.text = friend.name;
   return cell;
 }
@@ -71,7 +75,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  [self updateCellAccessoryViewForIndexPath:indexPath];
+}
 
+- (void)updateCellAccessoryViewForIndexPath:(NSIndexPath*)indexPath {
+  HDEvtInviteFriendViewCell *cell = (HDEvtInviteFriendViewCell*)[self.friendsTableView cellForRowAtIndexPath:indexPath];
+  FBProfile *friend = [[ProfileManager sharedManager].friendsArray objectAtIndex:indexPath.row];
+  if ([self.selectedFriends containsObject:friend]) {
+    [self.selectedFriends removeObject:friend];
+    [cell updateSelectedState:NO];
+  } else {
+    [self.selectedFriends addObject:friend];
+    [cell updateSelectedState:YES];
+  }
 }
 
 #pragma mark - Private methods

@@ -15,5 +15,5 @@
 @property (nonatomic) UIImageView *userAccessoryView;
 
 + (CGFloat)defaultHeight;
-
+- (void)updateSelectedState:(BOOL)selected;
 @end

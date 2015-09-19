@@ -46,4 +46,11 @@ static const CGFloat kAvatarVertMargin = 5;
   return 50;
 }
 
+- (void)updateSelectedState:(BOOL)selected {
+  if (selected) {
+    _userAccessoryView.image = [UIImage imageNamed:@"select"];
+  } else {
+    _userAccessoryView.image = [UIImage imageNamed:@"unselect"];
+  }
+}
 @end

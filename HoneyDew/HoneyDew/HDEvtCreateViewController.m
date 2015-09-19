@@ -15,23 +15,11 @@
 #import "UIColor+Utilities.h"
 #import "iOSMacro.h"
 
-static const CGFloat kVerticalMargin = 20;
-static const CGFloat kLabelHeight = 40;
-static const CGFloat kControlHeight = 45;
-static const CGFloat kHorizontalMargin = 10;
-
 #define kOFFSET_FOR_KEYBOARD  80.0
 
 @interface HDEvtCreateViewController () <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) UITextField *currentTextField;
 
-@property (nonatomic) UIScrollView *scrollView;
-
-@property (nonatomic) UILabel *eventNameLabel;
-@property (nonatomic) UITextField *eventNameTF;
-
-@property (nonatomic) UILabel *eventDateTimeLabel;
-@property (nonatomic) UITextField *eventDateTimeTF;
 @property (nonatomic) UIDatePicker *eventDateTimePicker;
 
 @property (nonatomic) UILabel *eventPartySizeLabel;
@@ -73,7 +61,6 @@ static const CGFloat kHorizontalMargin = 10;
   self.view.backgroundColor = [UIColor whiteColor];
   self.title = @"Create Event";
   
-  //[self addSubViews];
   [self addNotifications];
 }
 
@@ -207,23 +194,22 @@ static const CGFloat kHorizontalMargin = 10;
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
   self.currentTextField = textField;
+  
+  // prefill
+  if (textField.text.length == 0) {
+    if (textField.inputView == self.eventDateTimePicker) {
+      self.currentTextField.text = [self formatDate: self.eventDateTimePicker.date];
+      self.selectedDate = self.eventDateTimePicker.date;
+    } else if (textField.inputView == self.eventPartySizePickerView) {
+      NSString *selectedPickerRow = [self.partySizeArray objectAtIndex:0];
+      self.currentTextField.text = selectedPickerRow;
+      self.selectedSize = 0 + 1;
+    }
+  }
 }
 
 
 #pragma mark - Private methods
-
-- (void)addSubViews {
-  [self.view addSubview:_scrollView];
-  [_scrollView addSubview:_eventNameLabel];
-  [_scrollView addSubview:_eventNameTF];
-  [_scrollView addSubview:_eventDateTimeLabel];
-  [_scrollView addSubview:_eventDateTimeTF];
-  [_scrollView addSubview:_eventPartySizeLabel];
-  [_scrollView addSubview:_eventPartySizeTF];
-  [_scrollView addSubview:_eventPublicSwitchLabel];
-  [_scrollView addSubview:_isPubSwitch];
-  [_scrollView addSubview:_inviteFriendButton];
-}
 
 - (void)addNotifications {
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -241,27 +227,9 @@ static const CGFloat kHorizontalMargin = 10;
   
   _evtPlaceHolderArray = @[@"Event name:", @"Event time:", @"Party size"];
   
-  _scrollView = [[UIScrollView alloc] init];
-  
-  _eventNameLabel = [[UILabel alloc] init];
-  _eventNameLabel.text = @"Event name:";
-  _eventNameLabel.backgroundColor = [UIColor clearColor];
-  _eventNameLabel.textColor = [UIColor blackColor];
-  _eventNameLabel.font = HelNeueFontOfSize(18);
-  _eventNameTF = [[UITextField alloc] init];
-  _eventNameTF.borderStyle = UITextBorderStyleLine;
-  
-  _eventDateTimeLabel = [[UILabel alloc] init];
-  _eventDateTimeLabel.text = @"Event time:";
-  _eventDateTimeLabel.backgroundColor = [UIColor clearColor];
-  _eventDateTimeLabel.textColor = [UIColor blackColor];
   _eventDateTimePicker = [[UIDatePicker alloc] init];
   [_eventDateTimePicker setDatePickerMode:UIDatePickerModeDateAndTime];
   [_eventDateTimePicker addTarget:self action:@selector(updateDateTimeTF:) forControlEvents:UIControlEventValueChanged];
-  _eventDateTimeTF = [[UITextField alloc] init];
-  _eventDateTimeTF.borderStyle = UITextBorderStyleLine;
-  _eventDateTimeTF.delegate = self;
-  _eventDateTimeTF.inputView = _eventDateTimePicker;
   
   _eventPartySizeLabel = [[UILabel alloc] init];
   _eventPartySizeLabel.text = @"Party size:";
@@ -281,41 +249,17 @@ static const CGFloat kHorizontalMargin = 10;
   _eventPublicSwitchLabel.textColor = [UIColor blackColor];
   _isPubSwitch = [[UISwitch alloc] init];
   
-  _inviteFriendButton = [UIButton buttonWithType:UIButtonTypeCustom];
-  _inviteFriendButton.layer.borderColor = [UIColor blueColor].CGColor;
-  _inviteFriendButton.layer.borderWidth = 1.0;
-  [_inviteFriendButton setTitle:@"Create Event and Invite Friends" forState:UIControlStateNormal];
-  [_inviteFriendButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-  [_inviteFriendButton addTarget:self action:@selector(inviteButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-  
   _partySizeArray = @[@"just myself", @"you and me", @"three guys", @"four brothers", @"five dudes", @"more than six"];
 }
 
 - (void)manuallyLayoutSubviews {
   _evtTableView.frame = UIEdgeInsetsInsetRect(self.view.bounds, UIEdgeInsetsMake(10, 10, 10, 10));
-  
-  _scrollView.frame = self.view.bounds;
-  
-  _eventNameLabel.frame = CGRectMake(kHorizontalMargin, kVerticalMargin, self.view.frameWidth - 2 * kHorizontalMargin, kLabelHeight);
-  _eventNameTF.frame = CGRectMake(kHorizontalMargin, _eventNameLabel.frameBottomY, _eventNameLabel.frameWidth, kControlHeight);
-  
-  _eventDateTimeLabel.frame = CGRectMake(kHorizontalMargin, _eventNameTF.frameBottomY, _eventNameLabel.frameWidth, kLabelHeight);
-  _eventDateTimeTF.frame = CGRectMake(kHorizontalMargin, _eventDateTimeLabel.frameBottomY, _eventNameLabel.frameWidth, kControlHeight);
-  
-  _eventPartySizeLabel.frame = CGRectMake(kHorizontalMargin, _eventDateTimeTF.frameBottomY, _eventNameLabel.frameWidth, kLabelHeight);
-  _eventPartySizeTF.frame = CGRectMake(kHorizontalMargin, _eventPartySizeLabel.frameBottomY, _eventNameLabel.frameWidth, kControlHeight);
-  
-  _eventPublicSwitchLabel.frame = CGRectMake(kHorizontalMargin, _eventPartySizeTF.frameBottomY, _eventNameLabel.frameWidth, kLabelHeight);
-  _isPubSwitch.frame = CGRectMake(kHorizontalMargin, _eventPublicSwitchLabel.frameBottomY, _eventNameLabel.frameWidth * 0.5, kControlHeight);
-  
-  _inviteFriendButton.frame = CGRectMake(kHorizontalMargin, _isPubSwitch.frameBottomY + kControlHeight, _eventNameLabel.frameWidth, kControlHeight);
 }
 
 - (void)updateDateTimeTF:(id)sender {
   
-  UIDatePicker *picker = (UIDatePicker*)self.eventDateTimeTF.inputView;
-  self.currentTextField.text = [self formatDate: picker.date];
-  self.selectedDate = picker.date;
+  self.currentTextField.text = [self formatDate: _eventDateTimePicker.date];
+  self.selectedDate = _eventDateTimePicker.date;
 }
 
 - (NSString*)formatDate:(NSDate*)date {
