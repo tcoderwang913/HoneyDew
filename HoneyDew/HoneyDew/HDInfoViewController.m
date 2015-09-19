@@ -16,6 +16,7 @@
 #import "iOSMacro.h"
 #import "UIView+Position.h"
 #import "HDInfoKeyboardAssistView.h"
+#import "HDEmailUtility.h"
 
 #define FBButtonTag 100
 
@@ -90,10 +91,41 @@
 
   NSDictionary *sectionData = [self.dataModel objectAtIndex:indexPath.section];
   NSString *cellString = [[sectionData allKeys] objectAtIndex:indexPath.row];
-    NSLog(@"the current cellString is: %@", cellString);
   cell.cellLabel.text = cellString;
-  cell.cellTF.text = [sectionData objectForKey:cellString];
-    NSLog(@"the current input text is:%@", cell.cellTF.text);
+  NSString* input = [sectionData objectForKey:cellString];
+  cell.cellTF.text = input;
+    
+//  if ([cellString isEqualToString:@"Email Address"]) {
+//    if ([HDEmailUtility validateEmail:input]) {
+//        cell.cellTF.text = input;
+//    }
+//    else {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email Alert"
+//                                                        message:@"You have entered an invalid Email address"
+//                                                       delegate:self
+//                                              cancelButtonTitle:@"OK"
+//                                              otherButtonTitles:nil];
+//        [alert show];
+//    }
+//  }
+//  else if ([cellString isEqualToString:@"Name"]) {
+//    if (![input isEqualToString:@""]) {
+//        cell.cellTF.text = input;
+//    }
+//  }
+//  else if ([cellString isEqualToString:@"Password"]) {
+//    cell.cellTF.secureTextEntry = !cell.cellTF.secureTextEntry;
+//    cell.cellTF.text = input;
+//  }
+//  else if ([cellString isEqualToString:@"Food Flavor"]) {
+//    if (![input isEqualToString:@""]){
+//        cell.cellTF.text =input;
+//    }
+//  }
+//  else  {
+//    cell.cellTF.text = input;
+//  }
+//  NSLog(@"the current input text is:%@", cell.cellTF.text);
     
   return cell;
 }
@@ -106,7 +138,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -190,6 +221,7 @@
 
 - (void)doneBtnAction {
   [self.view endEditing:YES];
+  [self setNavigationBarButtonItem:[self createButtonEdit]];
 }
 
 #pragma mark - Private methods
@@ -230,11 +262,15 @@
   [self setTitle:@"Info"];
   UIEdgeInsets tableViewInsets = UIEdgeInsetsMake(0, 10, 0, 10);
   _infoTableView.frame = UIEdgeInsetsInsetRect(self.view.bounds, tableViewInsets);
-
-  self.navigationItem.rightBarButtonItem = [self creatButtonEdit];
+  [self setNavigationBarButtonItem:[self createButtonEdit]];
 }
 
--(UIBarButtonItem*)creatButtonEdit
+-(void)setNavigationBarButtonItem:(UIBarButtonItem*)button
+{
+    self.navigationItem.rightBarButtonItem = button;
+}
+
+-(UIBarButtonItem*)createButtonEdit
 {
     if (!self.btnEdit) {
         self.btnEdit = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
@@ -260,12 +296,11 @@
     //jump to the first cell
     HDInfoListCell *cell = (HDInfoListCell*)[self.infoTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     [cell.cellTF becomeFirstResponder];
-    
-    self.navigationItem.rightBarButtonItem = [self createButtonDone];
+    [self setNavigationBarButtonItem:[self createButtonDone]];
 }
 
 - (void)doneButtonTapped:(id)sender {
-    self.navigationItem.rightBarButtonItem = [self creatButtonEdit];
+    [self setNavigationBarButtonItem:[self createButtonEdit]];
     [self.view endEditing:YES];
 }
 
