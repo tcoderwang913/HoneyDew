@@ -22,6 +22,8 @@
 @interface HDInfoViewController () <KeyboardAssistDelegate>
 @property (nonatomic) UITableView *infoTableView;
 @property (nonatomic) NSMutableArray *dataModel;
+@property (nonatomic) UIBarButtonItem *btnEdit;
+@property (nonatomic) UIBarButtonItem *btnDone;
 @end
 
 @implementation HDInfoViewController
@@ -88,8 +90,11 @@
 
   NSDictionary *sectionData = [self.dataModel objectAtIndex:indexPath.section];
   NSString *cellString = [[sectionData allKeys] objectAtIndex:indexPath.row];
+    NSLog(@"the current cellString is: %@", cellString);
   cell.cellLabel.text = cellString;
   cell.cellTF.text = [sectionData objectForKey:cellString];
+    NSLog(@"the current input text is:%@", cell.cellTF.text);
+    
   return cell;
 }
 
@@ -225,14 +230,44 @@
   [self setTitle:@"Info"];
   UIEdgeInsets tableViewInsets = UIEdgeInsetsMake(0, 10, 0, 10);
   _infoTableView.frame = UIEdgeInsetsInsetRect(self.view.bounds, tableViewInsets);
-  
-  // create right bar item
-  UIBarButtonItem *add = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editButtonTapped:)];
-  self.navigationItem.rightBarButtonItem = add;
+
+  self.navigationItem.rightBarButtonItem = [self creatButtonEdit];
 }
 
-- (void)editButtonTapped:(id)sender {
-  
+-(UIBarButtonItem*)creatButtonEdit
+{
+    if (!self.btnEdit) {
+        self.btnEdit = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
+                                                        style:UIBarButtonItemStyleBordered
+                                                       target:self
+                                                       action:@selector(editButtonTapped:)];
+    }
+    return self.btnEdit;
 }
+
+-(UIBarButtonItem*)createButtonDone {
+    if (!self.btnDone) {
+        self.btnDone = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                        style:UIBarButtonItemStyleBordered
+                                                       target:self
+                                                       action:@selector(doneButtonTapped:)];
+    }
+    return self.btnDone;
+}
+
+
+- (void)editButtonTapped:(id)sender {
+    //jump to the first cell
+    HDInfoListCell *cell = (HDInfoListCell*)[self.infoTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [cell.cellTF becomeFirstResponder];
+    
+    self.navigationItem.rightBarButtonItem = [self createButtonDone];
+}
+
+- (void)doneButtonTapped:(id)sender {
+    self.navigationItem.rightBarButtonItem = [self creatButtonEdit];
+    [self.view endEditing:YES];
+}
+
 
 @end

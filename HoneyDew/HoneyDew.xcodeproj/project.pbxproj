@@ -58,6 +58,7 @@
 		B6EBE3341B4D019E0045C8D1 /* HDProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EBE3331B4D019E0045C8D1 /* HDProfile.m */; };
 		B6EBE3361B58D4140045C8D1 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBE3351B58D4140045C8D1 /* FBSDKMessengerShareKit.framework */; };
 		B6EBE3381B58D7920045C8D1 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EBE3371B58D7920045C8D1 /* FBSDKShareKit.framework */; };
+		F66611E61BAE0FF400AA1F59 /* HDEmailUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F66611E51BAE0FF400AA1F59 /* HDEmailUtility.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +167,8 @@
 		B6EBE3351B58D4140045C8D1 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		B6EBE3371B58D7920045C8D1 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		D8371B4A75A828D7B52BEC62 /* libPods-HoneyDew.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HoneyDew.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F66611E41BAE0FF400AA1F59 /* HDEmailUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDEmailUtility.h; sourceTree = "<group>"; };
+		F66611E51BAE0FF400AA1F59 /* HDEmailUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDEmailUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				B60E69461B2FF301009133F9 /* iOSMacro.h */,
+				F66611E51BAE0FF400AA1F59 /* HDEmailUtility.m */,
+				F66611E41BAE0FF400AA1F59 /* HDEmailUtility.h */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 				B6EB06FE1B9029D200FBDB35 /* HDEvtCreateViewCell.m in Sources */,
 				B6EBE3311B4CF7EA0045C8D1 /* ProfileManager.m in Sources */,
 				B66A7A571B3D088900AC5977 /* Event.m in Sources */,
+				F66611E61BAE0FF400AA1F59 /* HDEmailUtility.m in Sources */,
 				B66A7A491B36823D00AC5977 /* HDInfoViewController.m in Sources */,
 				B6EB06FB1B8D849100FBDB35 /* HDInfoListCell.m in Sources */,
 				B6B1919A1B0EFAB00082DED7 /* BloggerMapViewController.m in Sources */,
