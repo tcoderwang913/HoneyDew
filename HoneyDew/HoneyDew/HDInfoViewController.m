@@ -93,30 +93,39 @@
   NSString *cellString = [[sectionData allKeys] objectAtIndex:indexPath.row];
   cell.cellLabel.text = cellString;
   NSString* input = [sectionData objectForKey:cellString];
-
-  if ([cellString isEqualToString:@"Email Address"]) {
-    if ([HDEmailUtility isValidEmailAddress:input]) {
-        cell.cellTF.text = input;
-    }
-  }
-  else if ([cellString isEqualToString:@"Name"]) {
-    if (![input isEqualToString:@""]) {
-        cell.cellTF.text = input;
-    }
-  }
-  else if ([cellString isEqualToString:@"Password"]) {
-    cell.cellTF.secureTextEntry = !cell.cellTF.secureTextEntry;
-    cell.cellTF.text = input;
-  }
-  else if ([cellString isEqualToString:@"Food Flavor"]) {
-    if (![input isEqualToString:@""]){
-        cell.cellTF.text =input;
-    }
-  }
-  else  {
-    cell.cellTF.text = input;
-  }
-  NSLog(@"the current input text is:%@", cell.cellTF.text);
+  cell.cellTF.text = input;
+    
+//  if ([cellString isEqualToString:@"Email Address"]) {
+//    if ([HDEmailUtility validateEmail:input]) {
+//        cell.cellTF.text = input;
+//    }
+//    else {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email Alert"
+//                                                        message:@"You have entered an invalid Email address"
+//                                                       delegate:self
+//                                              cancelButtonTitle:@"OK"
+//                                              otherButtonTitles:nil];
+//        [alert show];
+//    }
+//  }
+//  else if ([cellString isEqualToString:@"Name"]) {
+//    if (![input isEqualToString:@""]) {
+//        cell.cellTF.text = input;
+//    }
+//  }
+//  else if ([cellString isEqualToString:@"Password"]) {
+//    cell.cellTF.secureTextEntry = !cell.cellTF.secureTextEntry;
+//    cell.cellTF.text = input;
+//  }
+//  else if ([cellString isEqualToString:@"Food Flavor"]) {
+//    if (![input isEqualToString:@""]){
+//        cell.cellTF.text =input;
+//    }
+//  }
+//  else  {
+//    cell.cellTF.text = input;
+//  }
+//  NSLog(@"the current input text is:%@", cell.cellTF.text);
     
   return cell;
 }
