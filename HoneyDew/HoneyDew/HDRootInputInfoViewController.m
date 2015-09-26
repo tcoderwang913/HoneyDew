@@ -45,6 +45,7 @@
 - (void)viewDidDisappear:(BOOL)animated {
   [super viewDidDisappear:animated];
   [self removeObservers];
+  [self.infoTableView endEditing:YES];
 }
 
 - (void)viewDidLoad {
@@ -170,12 +171,6 @@
 
 - (void)manuallyLayoutSubviews {
   _infoTableView.frame = UIEdgeInsetsInsetRect(self.view.bounds, UIEdgeInsetsMake(0, 10, self.keyboardHeight, 10));
-}
-
-#pragma mark scrollView delegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  [self.activeTF resignFirstResponder];
 }
 
 @end

@@ -90,7 +90,7 @@
     case 3:
     {
       cell.cellLabel.text = @"Party size";
-      cell.cellTF.text = [NSString stringWithFormat:@"%ld", self.event.eventPartySize];
+      cell.cellTF.text = [NSString stringWithFormat:@"%ld", (long)self.event.eventPartySize];
     }
       break;
     case 4:

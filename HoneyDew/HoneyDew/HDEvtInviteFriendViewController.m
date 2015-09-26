@@ -9,11 +9,15 @@
 #import "HDEvtInviteFriendViewController.h"
 #import "ProfileManager.h"
 #import "HDEvtInviteFriendViewCell.h"
+#import "UIView+Position.h"
+#import "UIColor+Utilities.h"
+#import "iOSMacro.h"
 
 @interface HDEvtInviteFriendViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic) UITableView *friendsTableView;
 @property (nonatomic) NSMutableSet *selectedFriends;
+@property (nonatomic) UIButton *rightButton;
 @end
 
 @implementation HDEvtInviteFriendViewController
@@ -28,6 +32,7 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   _selectedFriends = [NSMutableSet set];
+  [self updateRightNavigationBarButton];
   [self manuallyLayoutSubviews];
 }
 
@@ -76,6 +81,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
   [self updateCellAccessoryViewForIndexPath:indexPath];
+  [self updateRightNavigationBarButton];
 }
 
 - (void)updateCellAccessoryViewForIndexPath:(NSIndexPath*)indexPath {
@@ -91,6 +97,28 @@
 }
 
 #pragma mark - Private methods
+
+- (void)updateRightNavigationBarButton {
+  if (!self.rightButton) {
+    _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_rightButton addTarget:self action:@selector(inviteBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    _rightButton.frameSize = CGSizeMake(100, 44);
+    _rightButton.titleLabel.font = HelNeueFontOfSize(17);
+    [_rightButton setTitleColor:UIColorFromRGB(PRIM_WHITE_COLOR) forState:UIControlStateNormal];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_rightButton];
+    UIBarButtonItem *marginItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    marginItem.width = -25;
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:marginItem, barButtonItem, nil];
+  }
+  
+  NSString *buttonTitle = [NSString stringWithFormat:@"Invite (%lu)", (unsigned long)self.selectedFriends.count];
+  [_rightButton setTitle:buttonTitle forState:UIControlStateNormal];
+  self.rightButton.hidden = self.selectedFriends.count == 0;
+}
+
+- (void)inviteBtnAction:(id)sender {
+  
+}
 
 - (void)commonInit {
   self.view.backgroundColor = [UIColor whiteColor];
