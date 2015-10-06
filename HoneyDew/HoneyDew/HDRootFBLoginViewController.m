@@ -93,10 +93,6 @@
       [[HDControlManager sharedManager] replaceRootViewControllerWithTabController];
     }
   }
-  
-  FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-  //[FBSDKShareDialog showFromViewController:self withContent:content delegate:nil];
-  [FBSDKMessengerSharer shareImage:nil withOptions:nil];
 }
 
 - (void)commonInit {

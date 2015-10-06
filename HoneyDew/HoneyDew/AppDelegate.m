@@ -30,39 +30,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Override point for customization after application launch.
-//  [FBLoginView class];
-//  [FBProfilePictureView class];
-  
-//  return YES;
-  
-//  ViewController *vc = [[ViewController alloc ] initWithNibName:nil bundle:nil];
-//  self.window.rootViewController = vc;
-//  
-//  HomeScreenViewController *homeScreenVC = [[HomeScreenViewController alloc] init];
-//  UINavigationController *homeScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:homeScreenVC];
-//  
-//  
-//  
-//  PublicEventsViewController *publicVC = [[PublicEventsViewController alloc]  init];
-//  UINavigationController *publicScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:publicVC];
-//  
-//  SettingsViewController *settingVC = [[SettingsViewController alloc] init];
-//  UINavigationController *settingScreenNavigationController = [[UINavigationController alloc] initWithRootViewController:settingVC];
-//  
-//  
-//  [[UITabBarItem appearance] setTitleTextAttributes:@{
-//                                                      NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
-//                                                      NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:48/255.0 blue:92/255.0 alpha:1.0],}
-//                                           forState:UIControlStateNormal];
-//
-//  [[UITabBarItem appearance] setTitleTextAttributes:@{
-//                                                      NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],
-//                                                      NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:138/255.0 blue:196/255.0 alpha:1.0],}
-//                                           forState:UIControlStateSelected];
-//
-//  self.tabBarController.viewControllers = @[homeScreenNavigationController, publicScreenNavigationController,settingScreenNavigationController];
-//  self.window.rootViewController = self.tabBarController;
 
   [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
   [HDControlManager sharedManager];
@@ -95,9 +62,6 @@
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-//  
-//  return [FBAppCall handleOpenURL:url
-//                sourceApplication:sourceApplication];
   return [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 

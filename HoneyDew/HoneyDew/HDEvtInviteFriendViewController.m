@@ -13,6 +13,9 @@
 #import "UIColor+Utilities.h"
 #import "iOSMacro.h"
 
+#import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
+
 @interface HDEvtInviteFriendViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic) UITableView *friendsTableView;
@@ -118,6 +121,14 @@
 
 - (void)inviteBtnAction:(id)sender {
   
+  FBProfile *testProfile = [self.selectedFriends anyObject];
+  FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+  content.peopleIDs = [NSArray arrayWithObjects:testProfile.id, nil];
+  content.contentTitle = @"Test messenger, if you receive it please let me know, wei";
+  [FBSDKMessageDialog showWithContent:content delegate:nil];
+  FBSDKSendButton *button = [[FBSDKSendButton alloc] init];
+  button.shareContent = content;
+  [self.view addSubview:button];
 }
 
 - (void)commonInit {

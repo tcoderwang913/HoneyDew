@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HoneyDew/BloggerDetailTableViewCell.m"
-            timestampString = "452846611.478021"
+            filePath = "HoneyDew/HDEvtInviteFriendViewController.m"
+            timestampString = "465675512.794626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-layoutSubviews"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "-inviteBtnAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
